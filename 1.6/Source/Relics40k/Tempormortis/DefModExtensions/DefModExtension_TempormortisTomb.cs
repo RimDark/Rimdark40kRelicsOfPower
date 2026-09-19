@@ -8,7 +8,7 @@ namespace Relics40k;
 
 /// <summary>
 /// Everything the tempormortis tomb places and how it behaves, read by the site part worker, the
-/// gen step and the reliquary, so the whole site is tunable from the SitePartDef.
+/// gen step and the plinth's action, so the whole site is tunable from the SitePartDef.
 /// </summary>
 public class DefModExtension_TempormortisTomb : DefModExtension
 {
@@ -71,6 +71,4 @@ public class DefModExtension_TempormortisTomb : DefModExtension
     public SideCaveSettings sideCaves = new SideCaveSettings();
 
     public List<RankDef> requiredRanksOneAmong = [];
-
-    public JobDef takeRelicJob = null;
 }

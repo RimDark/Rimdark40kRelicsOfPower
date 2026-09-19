@@ -21,7 +21,6 @@
         <dilationCondition>BEWH_TemporalDilationField</dilationCondition>
         <reliquaryDef>BEWH_TempormortisReliquary</reliquaryDef>
         <dormantRelicDef>BEWH_TempormortisDormant</dormantRelicDef>
-        <takeRelicJob>BEWH_TakeTempormortis</takeRelicJob>
         <wallStuff>BlocksGranite</wallStuff>
         <floorTerrain>FlagstoneGranite</floorTerrain>
         <filthDef>Filth_RubbleRock</filthDef>

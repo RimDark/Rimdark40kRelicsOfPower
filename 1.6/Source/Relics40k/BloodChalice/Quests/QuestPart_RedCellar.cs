@@ -104,7 +104,9 @@ public class QuestPart_RedCellar : QuestPart
             }
         }
 
-        chalice = map.listerThings.ThingsOfDef(chaliceDef).FirstOrDefault();
+        var found = new List<Thing>();
+        ThingOwnerUtility.GetAllThingsRecursively(map, ThingRequest.ForDef(chaliceDef), found);
+        chalice = found.FirstOrDefault();
     }
 
     private bool ChaliceIsWithPlayer()

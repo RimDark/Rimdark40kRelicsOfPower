@@ -1,54 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef ParentName="BEWH_PedestalBase">
     <defName>BEWH_ReliquaryPedestal</defName>
     <label>reliquary pedestal</label>
     <description>A squat plinth of red-veined stone, worn into a shallow bowl where something has stood for a very long time. Whatever rests here is meant to stay here. Lifting it will not go unnoticed.</description>
-    <thingClass>Relics40k.Building_ReliquaryPedestal</thingClass>
-    <graphicData>
-      <texPath>Things/Building/Furniture/EndTable</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(1,1)</drawSize>
-      <color>(125, 28, 28)</color>
-    </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>PassThroughOnly</passability>
-    <fillPercent>0.4</fillPercent>
-    <pathCost>50</pathCost>
-    <castEdgeShadows>true</castEdgeShadows>
-    <staticSunShadowHeight>0.5</staticSunShadowHeight>
-    <surfaceType>Item</surfaceType>
-    <rotatable>false</rotatable>
-    <canOverlapZones>false</canOverlapZones>
-    <size>(1,1)</size>
-    <statBases>
-      <MaxHitPoints>400</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Beauty>6</Beauty>
-      <Mass>60</Mass>
-    </statBases>
-    <building>
-      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
-      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
-      <maxItemsInCell>1</maxItemsInCell>
-      <deconstructible>false</deconstructible>
-      <fixedStorageSettings>
-        <filter>
-          <thingDefs>
-            <li>BEWH_BloodChalice</li>
-          </thingDefs>
-        </filter>
-      </fixedStorageSettings>
-      <defaultStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>BEWH_BloodChalice</li>
-          </thingDefs>
-        </filter>
-      </defaultStorageSettings>
-    </building>
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">

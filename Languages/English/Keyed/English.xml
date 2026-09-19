@@ -12,6 +12,12 @@
   <Relics.BloodChalice.GuardianFellRefilling>A lost brother falls, and the chalice drinks him. Refilling: {0}.</Relics.BloodChalice.GuardianFellRefilling>
   <Relics.BloodChalice.GuardianFellFull>A lost brother falls, and the chalice drinks him. It is full.</Relics.BloodChalice.GuardianFellFull>
 
+  <!-- Pedestal -->
+  <Relics.Pedestal.Take>Take {0}</Relics.Pedestal.Take>
+  <Relics.Pedestal.Empty>nothing rests here</Relics.Pedestal.Empty>
+  <Relics.Pedestal.InspectHolding>Holds: {0}</Relics.Pedestal.InspectHolding>
+  <Relics.Pedestal.InspectEmpty>Empty.</Relics.Pedestal.InspectEmpty>
+
   <!-- Gene-Crypt Catalyst -->
   <Relics.GeneCryptCatalyst.SealNotThunderWarrior>only a thunder warrior can break this seal</Relics.GeneCryptCatalyst.SealNotThunderWarrior>
   <Relics.GeneCryptCatalyst.AlreadyOpen>already broken</Relics.GeneCryptCatalyst.AlreadyOpen>
@@ -36,10 +42,7 @@
 
   <!-- Tempormortis -->
   <Relics.Tempormortis.NotChaplaincy>not of the Chaplaincy</Relics.Tempormortis.NotChaplaincy>
-  <Relics.Tempormortis.AlreadyTaken>the plinth is empty</Relics.Tempormortis.AlreadyTaken>
   <Relics.Tempormortis.TakeRelic>Lift the tempormortis</Relics.Tempormortis.TakeRelic>
-  <Relics.Tempormortis.InspectHolding>A stopped hourglass rests here.</Relics.Tempormortis.InspectHolding>
-  <Relics.Tempormortis.InspectEmpty>The channel in the stone is empty.</Relics.Tempormortis.InspectEmpty>
   <Relics.Tempormortis.InspectDormant>Dormant. The sands hang halfway down.</Relics.Tempormortis.InspectDormant>
   <Relics.Tempormortis.Unmoved>Unmoved</Relics.Tempormortis.Unmoved>
   <Relics.Tempormortis.GuardiansWake>The field dies, and everything in the chamber finishes the step it was taking.</Relics.Tempormortis.GuardiansWake>

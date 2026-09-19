@@ -54,9 +54,14 @@
 
         <!-- Shared -->
         <Compile Include="Shared\Buildings\Building_GuardianSarcophagus.cs" />
-        <Compile Include="Shared\Buildings\Building_ReliquaryPedestal.cs" />
         <Compile Include="Shared\GameComponents\GameComponent_Relics40kQuests.cs" />
         <Compile Include="Shared\Lords\LordJob_RelicGuardians.cs" />
+        <Compile Include="Shared\Pedestal\CompPedestal.cs" />
+        <Compile Include="Shared\Pedestal\CompProperties_Pedestal.cs" />
+        <Compile Include="Shared\Pedestal\JobDriver_TakeFromPedestal.cs" />
+        <Compile Include="Shared\Pedestal\PedestalAction.cs" />
+        <Compile Include="Shared\Pedestal\PedestalAction_WakeGuardians.cs" />
+        <Compile Include="Shared\Pedestal\PedestalDefOf.cs" />
         <Compile Include="Shared\Lords\LordToil_FrozenInTime.cs" />
         <Compile Include="Shared\Lords\FrozenInTimeUtility.cs" />
         <Compile Include="Shared\Patches\Patches_FrozenInTime.cs" />
@@ -102,7 +107,6 @@
         <Compile Include="GeneCryptCatalyst\Workers\WorkGiver_EnterAscensionEngine.cs" />
 
         <!-- Tempormortis -->
-        <Compile Include="Tempormortis\Buildings\Building_TombReliquary.cs" />
         <Compile Include="Tempormortis\Comps\CompProperties_TemporalFieldDrawer.cs" />
         <Compile Include="Tempormortis\Comps\CompProperties_TempormortisRite.cs" />
         <Compile Include="Tempormortis\Comps\Comp_TemporalFieldDrawer.cs" />
@@ -114,7 +118,7 @@
         <Compile Include="Tempormortis\Hediffs\HediffCompProperties_TempormortisRite.cs" />
         <Compile Include="Tempormortis\Hediffs\HediffComp_TemporalAura.cs" />
         <Compile Include="Tempormortis\Hediffs\HediffComp_TempormortisRite.cs" />
-        <Compile Include="Tempormortis\Jobs\JobDriver_TakeTempormortis.cs" />
+        <Compile Include="Tempormortis\Pedestal\PedestalAction_TempormortisTomb.cs" />
         <Compile Include="Tempormortis\Sites\GenStep_TempormortisTomb.cs" />
         <Compile Include="Tempormortis\Sites\SitePartWorker_TempormortisTomb.cs" />
         <Compile Include="Tempormortis\Util\TempormortisUtility.cs" />

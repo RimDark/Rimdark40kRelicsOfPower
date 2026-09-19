@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- A plinth that holds one item unspawned and draws it on top. Whoever stocks it installs a
+       PedestalAction that decides who may lift the item and what happens when they do. Tune where
+       the item sits per def through CompProperties_Pedestal; in dev mode a stocked pedestal offers
+       nudge gizmos that log the values to paste back here. -->
+  <ThingDef ParentName="BuildingBase" Name="BEWH_PedestalBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/BEWH_Pedestal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>50</pathCost>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(1,1)</size>
+    <tickerType>Never</tickerType>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <Mass>60</Mass>
+    </statBases>
+    <building>
+      <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+      <li Class="Relics40k.CompProperties_Pedestal">
+        <heldItemOffset>(0, 0, 0.12)</heldItemOffset>
+        <heldItemScale>1</heldItemScale>
+        <takeDurationTicks>240</takeDurationTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BEWH_PedestalBase">
+    <defName>BEWH_Pedestal</defName>
+    <label>pedestal</label>
+    <description>A squat stone plinth with a shallow bowl worn into its top, where something has stood for a very long time.</description>
+  </ThingDef>
+
+</Defs>

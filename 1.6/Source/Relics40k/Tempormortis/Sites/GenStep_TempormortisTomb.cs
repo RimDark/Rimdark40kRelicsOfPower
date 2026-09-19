@@ -75,7 +75,7 @@ public class GenStep_TempormortisTomb : GenStep
             LayoutUtils.Generate(layout, rect, map, spawned, null, true, rotation);
 
             doorCell = FindOuterDoor(spawned, rect, rect.CenterCell);
-            plinthCell = FindSpawnedOfDef(spawned, extension.reliquaryDef);
+            plinthCell = FindSpawnedPedestal(spawned);
         }
         else
         {
@@ -103,7 +103,7 @@ public class GenStep_TempormortisTomb : GenStep
             SpawnReliquary(map, plinthCell, extension);
         }
 
-        SpawnRelic(map, plinthCell, extension);
+        SpawnRelic(map, plinthCell, parms.sitePart?.def, extension);
         SpawnFilth(map, interior, extension);
         SpawnLoot(map, spawned, interior, extension);
         SpawnGuardians(map, interior, plinthCell, extension, parms.sitePart?.parms?.threatPoints ?? 0f);
@@ -142,16 +142,11 @@ public class GenStep_TempormortisTomb : GenStep
         return best;
     }
 
-    private static IntVec3 FindSpawnedOfDef(List<Thing> spawned, ThingDef def)
+    private static IntVec3 FindSpawnedPedestal(List<Thing> spawned)
     {
-        if (def == null)
-        {
-            return IntVec3.Invalid;
-        }
-
         foreach (var thing in spawned)
         {
-            if (thing.def == def)
+            if (!thing.Destroyed && thing.TryGetComp<CompPedestal>() != null)
             {
                 return thing.Position;
             }
@@ -258,7 +253,7 @@ public class GenStep_TempormortisTomb : GenStep
         }
     }
 
-    private static void SpawnRelic(Map map, IntVec3 cell, DefModExtension_TempormortisTomb extension)
+    private static void SpawnRelic(Map map, IntVec3 cell, SitePartDef sitePartDef, DefModExtension_TempormortisTomb extension)
     {
         if (extension.dormantRelicDef == null || !cell.IsValid)
         {
@@ -270,7 +265,20 @@ public class GenStep_TempormortisTomb : GenStep
             return;
         }
 
-        GenSpawn.Spawn(ThingMaker.MakeThing(extension.dormantRelicDef), cell, map);
+        var relic = ThingMaker.MakeThing(extension.dormantRelicDef);
+        var pedestal = cell.GetFirstThingWithComp<CompPedestal>(map)?.GetComp<CompPedestal>();
+
+        if (pedestal != null)
+        {
+            pedestal.action = new PedestalAction_TempormortisTomb(sitePartDef);
+
+            if (pedestal.TryPlace(relic))
+            {
+                return;
+            }
+        }
+
+        GenSpawn.Spawn(relic, cell, map);
     }
 
     /// <summary>The Judiciar who turned the sands is still in here, at the foot of his own plinth.</summary>

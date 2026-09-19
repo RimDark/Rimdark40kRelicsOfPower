@@ -83,66 +83,10 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef ParentName="BEWH_PedestalBase">
     <defName>BEWH_TempormortisReliquary</defName>
     <label>judiciar's plinth</label>
     <description>A black basalt plinth, cut with a single deep channel for the base of an hourglass. The dust on it lies in mid-air a finger's width above the stone and has never come down.</description>
-    <thingClass>Relics40k.Building_TombReliquary</thingClass>
-    <graphicData>
-      <texPath>Things/Building/Furniture/EndTable</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(1,1)</drawSize>
-      <color>(58, 66, 82)</color>
-    </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>PassThroughOnly</passability>
-    <fillPercent>0.4</fillPercent>
-    <pathCost>50</pathCost>
-    <castEdgeShadows>true</castEdgeShadows>
-    <staticSunShadowHeight>0.5</staticSunShadowHeight>
-    <surfaceType>Item</surfaceType>
-    <rotatable>false</rotatable>
-    <canOverlapZones>false</canOverlapZones>
-    <size>(1,1)</size>
-    <statBases>
-      <MaxHitPoints>400</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Beauty>6</Beauty>
-      <Mass>60</Mass>
-    </statBases>
-    <building>
-      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
-      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
-      <maxItemsInCell>1</maxItemsInCell>
-      <deconstructible>false</deconstructible>
-      <fixedStorageSettings>
-        <filter>
-          <thingDefs>
-            <li>BEWH_TempormortisDormant</li>
-          </thingDefs>
-        </filter>
-      </fixedStorageSettings>
-      <defaultStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>BEWH_TempormortisDormant</li>
-          </thingDefs>
-        </filter>
-      </defaultStorageSettings>
-    </building>
-    <modExtensions>
-      <li Class="Relics40k.DefModExtension_TempormortisTomb">
-        <dilationCondition>BEWH_TemporalDilationField</dilationCondition>
-        <dormantRelicDef>BEWH_TempormortisDormant</dormantRelicDef>
-        <takeRelicJob>BEWH_TakeTempormortis</takeRelicJob>
-        <requiredRanksOneAmong>
-          <li>BEWH_AstartesRankJudiciar</li>
-          <li>BEWH_AstartesRankChaplain</li>
-          <li>BEWH_AstartesRankMasterOfSanctity</li>
-        </requiredRanksOneAmong>
-      </li>
-    </modExtensions>
   </ThingDef>
 
 </Defs>

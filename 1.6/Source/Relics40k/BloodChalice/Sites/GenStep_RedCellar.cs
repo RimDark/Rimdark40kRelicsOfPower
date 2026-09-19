@@ -177,14 +177,11 @@ public class GenStep_RedCellar : GenStep
     private static IntVec3 FindPedestalCell(Map map, StructureLayoutUtility.Spawned spawned, CellRect rect,
         DefModExtension_RedCellar extension)
     {
-        if (extension.pedestalDef != null)
+        foreach (var thing in spawned.things)
         {
-            foreach (var thing in spawned.things)
+            if (!thing.Destroyed && thing.TryGetComp<CompPedestal>() != null)
             {
-                if (thing.def == extension.pedestalDef && !thing.Destroyed)
-                {
-                    return thing.Position;
-                }
+                return thing.Position;
             }
         }
 
@@ -443,7 +440,7 @@ public class GenStep_RedCellar : GenStep
 
         foreach (var thing in spawned)
         {
-            if (thing.def == extension.pedestalDef)
+            if (thing.TryGetComp<CompPedestal>() != null)
             {
                 pedestalCell = thing.Position;
             }
@@ -521,15 +518,21 @@ public class GenStep_RedCellar : GenStep
         }
 
         var existing = map.listerThings.ThingsOfDef(extension.chaliceDef);
-        var chalice = existing.Count > 0 ? existing[0] : null;
-
-        if (chalice == null)
-        {
-            chalice = ThingMaker.MakeThing(extension.chaliceDef);
-            GenSpawn.Spawn(chalice, cell, map);
-        }
+        var chalice = existing.Count > 0 ? existing[0] : ThingMaker.MakeThing(extension.chaliceDef);
 
         chalice.TryGetComp<CompUseEffect_BloodChalice>()?.StartCooldown();
+
+        var pedestal = cell.GetFirstThingWithComp<CompPedestal>(map)?.GetComp<CompPedestal>();
+
+        if (pedestal != null)
+        {
+            pedestal.action = new PedestalAction_WakeGuardians();
+        }
+
+        if ((pedestal == null || !pedestal.TryPlace(chalice)) && !chalice.Spawned)
+        {
+            GenSpawn.Spawn(chalice, cell, map);
+        }
     }
 
     private static void SpawnGuardians(Map map, CellRect rect, IntVec3 pedestalCell,
