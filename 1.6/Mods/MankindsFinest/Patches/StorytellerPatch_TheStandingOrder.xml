@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Fires once per save on success; a failed run is retried after a delay. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps</xpath>
+    <value>
+      <li Class="Core40k.StorytellerCompProperties_PersistentQuest">
+        <incident>BEWH_TheStandingOrder</incident>
+        <minDaysPassed>30</minDaysPassed>
+        <retryDelayDaysRange>25~40</retryDelayDaysRange>
+        <failedFireRetryDaysRange>1~3</failedFireRetryDaysRange>
+        <completionMode>QuestSuccess</completionMode>
+        <maxOccurrences>-1</maxOccurrences>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

@@ -2,7 +2,7 @@
 <Defs>
 
   <AbilityDef>
-    <defName>Relics40k_TempormortisTurnTheSands</defName>
+    <defName>BEWH_TempormortisTurnTheSands</defName>
     <label>turn the sands</label>
     <description>Invert the Tempormortis. While the sands run, time thickens around the bearer: hostile creatures inside the field move, aim and strike at a fraction of their normal speed, cannot dodge, and take heavier blows from melee. The bearer is unaffected.\n\nOnly a Judiciar, Chaplain or Master of Sanctity may turn the sands.</description>
     <iconPath>UI/Abilities/BEWH_AbilityLibrarianWaveOfLethargy</iconPath>
@@ -39,7 +39,7 @@
       </li>
       <li Class="CompProperties_AbilityGiveHediff">
         <compClass>CompAbilityEffect_GiveHediff</compClass>
-        <hediffDef>Relics40k_TempormortisActive</hediffDef>
+        <hediffDef>BEWH_TempormortisActive</hediffDef>
         <onlyApplyToSelf>true</onlyApplyToSelf>
         <replaceExisting>true</replaceExisting>
       </li>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SitePartDef>
+    <defName>BEWH_RedCellar</defName>
+    <label>red cellar</label>
+    <description>A reliquary crypt cut deep into a mountain. The air inside will not let blood clot.</description>
+    <workerClass>Relics40k.SitePartWorker_RedCellar</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/ItemStash</expandingIconTexture>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <arrivedLetterLabelPart>the red cellar</arrivedLetterLabelPart>
+    <arrivedLetter>A cut passage runs into the mountain wall, and the dark at the end of it does not carry. The rock is colder than it should be, and the air coming out tastes of iron.\n\nAnyone without the red thirst will bleed slowly just by breathing it. Anyone with it will be fed by it.\n\nThe brothers who carried the chalice down here never came back up. They are still here.</arrivedLetter>
+    <forceExitAndRemoveMapCountdownDurationDays>4</forceExitAndRemoveMapCountdownDurationDays>
+    <tags>
+      <li>BEWH_RedCellar</li>
+    </tags>
+    <modExtensions>
+      <li Class="Relics40k.DefModExtension_RedCellar">
+        <airCondition>BEWH_ExsanguinatingAir</airCondition>
+        <pedestalDef>BEWH_ReliquaryPedestal</pedestalDef>
+        <chaliceDef>BEWH_BloodChalice</chaliceDef>
+        <casketDef>BEWH_GuardianSarcophagus</casketDef>
+        <wallStuff>BlocksGranite</wallStuff>
+        <floorTerrain>FlagstoneSandstone</floorTerrain>
+        <filthDef>Filth_Blood</filthDef>
+        <filthCount>12</filthCount>
+        <guardianKind>BEWH_LostBrother</guardianKind>
+        <guardianCount>4</guardianCount>
+        <guardianHediff>BEWH_BlackRage</guardianHediff>
+        <emptyCasketCount>1</emptyCasketCount>
+        <!-- The chapter gene comes from the Blood Angels colour preset on the pawn kind. -->
+        <roomLayout>BEWH_BloodChaliceCrypt</roomLayout>
+        <hollowRadius>3</hollowRadius>
+        <hollowNoiseAmplitude>2.5</hollowNoiseAmplitude>
+        <hollowNoiseFrequency>0.06</hollowNoiseFrequency>
+        <!-- hollowTerrain unset: each cell keeps the floor of the stone it was cut from. -->
+        <layoutLampFuelFraction>1</layoutLampFuelFraction>
+        <layoutLoot>
+          <li>
+            <thingDef>Silver</thingDef>
+            <countRange>180~340</countRange>
+            <chance>0.85</chance>
+          </li>
+          <li>
+            <thingDef>Gold</thingDef>
+            <countRange>18~45</countRange>
+            <chance>0.7</chance>
+          </li>
+          <li>
+            <thingDef>MedicineUltratech</thingDef>
+            <countRange>2~4</countRange>
+            <chance>0.6</chance>
+          </li>
+          <li>
+            <thingDef>ComponentSpacer</thingDef>
+            <countRange>1~3</countRange>
+            <chance>0.5</chance>
+          </li>
+        </layoutLoot>
+        <!-- Only used when roomLayout is unset. -->
+        <roomSize>13</roomSize>
+        <roofRoom>true</roofRoom>
+        <minRockDepth>20</minRockDepth>
+        <cavityPadding>3</cavityPadding>
+        <tunnelWidthRange>2~3</tunnelWidthRange>
+        <tunnelJitterChance>0.3</tunnelJitterChance>
+        <roofTunnel>true</roofTunnel>
+        <sideCaves>
+          <countRange>3~5</countRange>
+          <lengthRange>11~19</lengthRange>
+          <widthRange>2~3</widthRange>
+          <wanderChance>0.35</wanderChance>
+          <chamberRadius>5</chamberRadius>
+          <openChamberChance>0.25</openChamberChance>
+          <chunkCountRange>2~4</chunkCountRange>
+        </sideCaves>
+        <landingPadSize>9</landingPadSize>
+        <landingPadMinDistanceFromCrypt>35</landingPadMinDistanceFromCrypt>
+        <landingPadMinDistanceFromEdge>25</landingPadMinDistanceFromEdge>
+        <!-- Set to a PrefabDef (e.g. BEWH_RedCellarCrypt) to use a hand-made crypt instead of the generated room. -->
+      </li>
+    </modExtensions>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>BEWH_RedCellar</defName>
+    <linkWithSite>BEWH_RedCellar</linkWithSite>
+    <!-- After ruins and structures (750) so they are already in UsedRects, before FindPlayerStartSpot (850). -->
+    <order>800</order>
+    <genStep Class="Relics40k.GenStep_RedCellar" />
+  </GenStepDef>
+
+</Defs>

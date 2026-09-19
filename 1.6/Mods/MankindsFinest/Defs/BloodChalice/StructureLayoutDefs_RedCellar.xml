@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    Hand-made Red Cellar crypt. Rows are read bottom-up: row 0 is the southern edge, so the two
+    entrance doors sit on the south face and the relic chamber is at the north end.
+    A token is Def, Def_Stuff, Def_Rotation or Def_Stuff_Rotation, and "." is an empty cell.
+    Exported from a KCSG structure; only the outer tag and the relic/casket defs were changed.
+  -->
+  <Relics40k.StructureLayoutDef>
+    <defName>BEWH_BloodChaliceCrypt</defName>
+    <allowRotation>true</allowRotation>
+    <forceGenerateRoof>true</forceGenerateRoof>
+    <randomizeWallStuffAtGen>false</randomizeWallStuffAtGen>
+    <layouts>
+      <li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Door_BlocksSlate,Wall_BlocksSlate,Door_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,TorchWallLamp_South,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.</li>
+        <li>.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,ShelfSmall_WoodLog_North,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,ShelfSmall_WoodLog_North,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.</li>
+        <li>.,Wall_BlocksSlate,Wall_BlocksSlate,TorchWallLamp_West,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,TorchWallLamp_East,Wall_BlocksSlate,Wall_BlocksSlate,.</li>
+        <li>.,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,Door_BlocksSlate,.,.,.,.,.,.,.,.,.,Door_BlocksSlate,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,.</li>
+        <li>.,Wall_BlocksSlate,ShelfSmall_WoodLog_East,.,.,.,BEWH_GuardianSarcophagus_West,.,.,.,.,TorchWallLamp_East,Wall_BlocksSlate,TorchWallLamp_West,.,.,.,.,.,.,.,TorchWallLamp_East,Wall_BlocksSlate,TorchWallLamp_West,.,.,.,.,BEWH_GuardianSarcophagus_East,.,.,.,ShelfSmall_WoodLog_West,Wall_BlocksSlate,.</li>
+        <li>.,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,Door_BlocksSlate,.,.,.,.,.,.,.,.,.,Door_BlocksSlate,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,.</li>
+        <li>.,Wall_BlocksSlate,Wall_BlocksSlate,TorchWallLamp_West,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,TorchWallLamp_East,Wall_BlocksSlate,Wall_BlocksSlate,.</li>
+        <li>.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,ShelfSmall_WoodLog_South,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,ShelfSmall_WoodLog_South,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.</li>
+        <li>.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,TorchWallLamp_North,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Door_BlocksSlate,Wall_BlocksSlate,Door_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,.,TorchWallLamp_South,.,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,.,.,.,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,.,.,.,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,TorchWallLamp_South,.,.,.,TorchWallLamp_South,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,.,.,.,.,.,.,.,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,.,BEWH_GuardianSarcophagus_North,.,.,.,BEWH_GuardianSarcophagus_North,.,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,.,.,.,.,.,.,.,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,.,.,.,.,.,.,.,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,TorchWallLamp_North,.,BEWH_ReliquaryPedestal,.,TorchWallLamp_North,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,Wall_BlocksSlate,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      </li>
+    </layouts>
+    <terrainGrid>
+      <li>PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt</li>
+      <li>PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt</li>
+      <li>PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt</li>
+      <li>PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt</li>
+      <li>PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt</li>
+      <li>PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt</li>
+      <li>PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt</li>
+      <li>PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt</li>
+      <li>PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt</li>
+      <li>PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt</li>
+      <li>PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt</li>
+      <li>PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,PackedDirt,PackedDirt,Concrete,Concrete,Concrete,Concrete,Concrete,PackedDirt,PackedDirt,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+      <li>.,.,.,.,.,.,.,.,.,.,.,.,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,PackedDirt,.,.,.,.,.,.,.,.,.,.,.,.</li>
+    </terrainGrid>
+  </Relics40k.StructureLayoutDef>
+
+</Defs>

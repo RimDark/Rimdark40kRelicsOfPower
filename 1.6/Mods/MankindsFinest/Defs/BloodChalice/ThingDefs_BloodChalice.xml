@@ -2,15 +2,14 @@
 <Defs>
 
   <ThingDef>
-    <defName>Relics40k_BloodChalice</defName>
+    <defName>BEWH_BloodChalice</defName>
     <label>blood chalice</label>
     <thingClass>ThingWithComps</thingClass>
     <description>A wide-mouthed goblet of red gold, its rim worn smooth by ten thousand years of lips. The vessel is never empty and never filled: whatever is poured out of it is back within the hour, thick and dark and faintly warm.\n\nThe chalice does not give life. It gives back what was taken. Wounds close, scars unknit, sickness burns out of the blood, and the drinker's thirst is answered to the brim. But what is gone is gone - the chalice restores flesh to a body, not a body to itself. A hand severed stays severed, and no draught has ever grown one back.\n\nOnly those whose blood already runs on the red thirst can drink from it. In anyone else the draught is inert, and the chalice will not be lifted.</description>
     <graphicData>
-      <texPath>Things/Item/Relic/RelicInertCup</texPath>
+      <texPath>Things/BEWH_BloodChalice</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(0.85, 0.85)</drawSize>
-      <color>(140, 20, 24)</color>
     </graphicData>
     <category>Item</category>
     <thingCategories>
@@ -35,14 +34,14 @@
     <drawGUIOverlay>false</drawGUIOverlay>
     <pathCost>14</pathCost>
     <comps>
-      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>Drink from the blood chalice</useLabel>
         <useDuration>300</useDuration>
         <showUseGizmo>true</showUseGizmo>
       </li>
-      <li Class="Relics40k.CompProperties_UseEffectBloodChalice"/>
+      <li Class="Relics40k.CompProperties_UseEffectBloodChalice" />
     </comps>
     <modExtensions>
       <li Class="Relics40k.DefModExtension_BloodChalice">
@@ -53,8 +52,8 @@
         <sealStumps>true</sealStumps>
         <fillHemogen>true</fillHemogen>
         <fillDeathrestNeed>true</fillDeathrestNeed>
-        <moodThought>Relics40k_BloodChaliceDraught</moodThought>
-        <excludedHediffs/>
+        <moodThought>BEWH_BloodChaliceDraught</moodThought>
+        <excludedHediffs />
       </li>
     </modExtensions>
   </ThingDef>

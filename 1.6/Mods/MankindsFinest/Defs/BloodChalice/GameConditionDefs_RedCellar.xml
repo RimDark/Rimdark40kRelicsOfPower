@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <GameConditionDef>
+    <defName>BEWH_ExsanguinatingAir</defName>
+    <conditionClass>Relics40k.GameCondition_ExsanguinatingAir</conditionClass>
+    <label>exsanguinating air</label>
+    <description>The air here is thick with old blood that has never clotted. Anyone without the red thirst bleeds slowly just by breathing it. Those who carry the thirst are fed by it instead.</description>
+    <letterText>The air here is thick with old blood that has never clotted. Anyone without the red thirst bleeds slowly just by breathing it.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <canBePermanent>true</canBePermanent>
+    <natural>false</natural>
+    <spreadsFilth>Filth_Blood</spreadsFilth>
+    <modExtensions>
+      <li Class="Relics40k.DefModExtension_ExsanguinatingAir">
+        <!-- Natural blood-loss recovery is about 0.014/hour, so the net rate is a little lower. -->
+        <bloodLossPerHour>0.15</bloodLossPerHour>
+        <hemogenPerHour>0.05</hemogenPerHour>
+        <intervalTicks>250</intervalTicks>
+        <mistColor>(115, 5, 8)</mistColor>
+        <mistIntensity>0.7</mistIntensity>
+        <immuneHediffs>
+          <li>BEWH_BlackRage</li>
+        </immuneHediffs>
+      </li>
+    </modExtensions>
+  </GameConditionDef>
+
+</Defs>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_ReliquaryPedestal</defName>
+    <label>reliquary pedestal</label>
+    <description>A squat plinth of red-veined stone, worn into a shallow bowl where something has stood for a very long time. Whatever rests here is meant to stay here. Lifting it will not go unnoticed.</description>
+    <thingClass>Relics40k.Building_ReliquaryPedestal</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Furniture/EndTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <color>(125, 28, 28)</color>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>50</pathCost>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <Mass>60</Mass>
+    </statBases>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <maxItemsInCell>1</maxItemsInCell>
+      <deconstructible>false</deconstructible>
+      <fixedStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>BEWH_BloodChalice</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <thingDefs>
+            <li>BEWH_BloodChalice</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_GuardianSarcophagus</defName>
+    <label>sealed sarcophagus</label>
+    <description>A slab-lidded stone casket, sealed from the outside and heavy with dust. There is no name cut into it. Whatever is inside was not laid to rest so much as put away, and the seal was meant to hold until someone came for the relic.</description>
+    <thingClass>Relics40k.Building_GuardianSarcophagus</thingClass>
+    <containedPawnsSelectable>false</containedPawnsSelectable>
+    <drawerType>RealtimeOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Misc/SarcophagusFull</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,4)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(1,2)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(1,0,0)</interactionCellOffset>
+    <tickerType>Never</tickerType>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>4</Beauty>
+      <Mass>80</Mass>
+    </statBases>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <isEscapableContainer>false</isEscapableContainer>
+      <preventDeteriorationInside>true</preventDeteriorationInside>
+      <destroySound>BuildingDestroyed_Stone_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_EmptyStateGraphic">
+        <graphicData>
+          <texPath>Things/Building/Misc/Sarcophagus</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(3,4)</drawSize>
+        </graphicData>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

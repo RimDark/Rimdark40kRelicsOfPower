@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- Catalysis coma: ten days, modelled on XenogerminationComa -->
+  <!-- Recovery coma: five days, modelled on XenogerminationComa -->
   <HediffDef>
-    <defName>Relics40k_GeneCryptComa</defName>
-    <label>gene-crypt catalysis coma</label>
-    <description>The gene-crypt catalyst is rewriting this person's proto-organs into their perfected Astartes forms. Every organ is being remade at once; the body cannot afford consciousness while it happens.</description>
+    <defName>BEWH_GeneCryptComa</defName>
+    <label>ascension coma</label>
+    <description>The ascension engine rewrote this person's proto-organs into their perfected Astartes forms in a single working. Every organ was remade at once, and the body is now spending everything it has left on finishing the job. It cannot afford consciousness while it does.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <initialSeverity>0.001</initialSeverity>
     <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
@@ -24,47 +24,11 @@
     </stages>
     <comps>
       <li Class="HediffCompProperties_Disappears">
-        <disappearsAfterTicks>600000</disappearsAfterTicks>
+        <disappearsAfterTicks>300000</disappearsAfterTicks>
         <showRemainingTime>true</showRemainingTime>
         <canUseDecimalsShortForm>true</canUseDecimalsShortForm>
       </li>
     </comps>
-  </HediffDef>
-
-  <!-- Frozen carrier for the thunder warrior instability stage.
-       Severity is set to (capturedStage + 1) on application and never moves again. -->
-  <HediffDef>
-    <defName>Relics40k_ThunderbornInstability</defName>
-    <label>thunderborn scarring</label>
-    <description>The Furybound sequence has been excised, but the damage it had already done to this mind is permanent. Whatever state the thunder warrior's psyche had degraded to at the moment of catalysis, it will stay there - no better, and no worse.</description>
-    <hediffClass>Relics40k.Hediff_FrozenInstability</hediffClass>
-    <isBad>true</isBad>
-    <everCurableByItem>false</everCurableByItem>
-    <scenarioCanAdd>false</scenarioCanAdd>
-    <initialSeverity>1</initialSeverity>
-    <minSeverity>1</minSeverity>
-    <maxSeverity>5</maxSeverity>
-    <stages>
-      <li>
-        <label>settled</label>
-      </li>
-      <li>
-        <minSeverity>2</minSeverity>
-        <label>frayed</label>
-      </li>
-      <li>
-        <minSeverity>3</minSeverity>
-        <label>haunted</label>
-      </li>
-      <li>
-        <minSeverity>4</minSeverity>
-        <label>sleepless</label>
-      </li>
-      <li>
-        <minSeverity>5</minSeverity>
-        <label>shattered</label>
-      </li>
-    </stages>
   </HediffDef>
 
 </Defs>

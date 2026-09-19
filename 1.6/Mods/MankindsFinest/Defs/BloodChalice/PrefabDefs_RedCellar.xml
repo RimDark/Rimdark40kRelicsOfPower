@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    Example crypt. Coordinates are (x, 0, z) from the bottom-left corner; rects are (minX, minZ, maxX, maxZ).
+    Point DefModExtension_RedCellar.roomPrefab at this def to use it instead of the generated room.
+    To make your own: dev mode > Debug actions > Generation > "Create prefab", drag a rectangle, and paste the
+    clipboard here. Turn on "prefabCopyTerrain" in the debug settings first if you want the floor included.
+  -->
+  <PrefabDef>
+    <defName>BEWH_RedCellarCrypt</defName>
+    <rotations>North</rotations>
+    <size>(13,13)</size>
+    <terrain>
+      <FlagstoneSandstone>
+        <rects>
+          <li>(0,0,12,12)</li>
+        </rects>
+      </FlagstoneSandstone>
+    </terrain>
+    <things>
+      <Wall>
+        <rects>
+          <li>(0,0,5,0)</li>
+          <li>(7,0,12,0)</li>
+          <li>(0,12,12,12)</li>
+          <li>(0,1,0,11)</li>
+          <li>(12,1,12,11)</li>
+        </rects>
+        <stuff>BlocksGranite</stuff>
+      </Wall>
+      <Door>
+        <position>(6,0,0)</position>
+        <stuff>BlocksGranite</stuff>
+      </Door>
+      <BEWH_ReliquaryPedestal>
+        <position>(6,0,6)</position>
+      </BEWH_ReliquaryPedestal>
+      <Sarcophagus>
+        <positions>
+          <li>(2,0,2)</li>
+          <li>(10,0,2)</li>
+          <li>(2,0,9)</li>
+          <li>(10,0,9)</li>
+        </positions>
+        <stuff>BlocksGranite</stuff>
+      </Sarcophagus>
+    </things>
+  </PrefabDef>
+
+</Defs>

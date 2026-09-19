@@ -3,7 +3,7 @@
 
   <!-- On the bearer while the sands run. -->
   <HediffDef>
-    <defName>Relics40k_TempormortisActive</defName>
+    <defName>BEWH_TempormortisActive</defName>
     <label>sands turned</label>
     <description>The Tempormortis is inverted. Time thickens around this warrior; everything hostile within reach is slowed while it runs.</description>
     <hediffClass>HediffWithComps</hediffClass>
@@ -25,7 +25,7 @@
       <li Class="Relics40k.HediffCompProperties_TemporalAura">
         <radius>5.9</radius>
         <pulseIntervalTicks>30</pulseIntervalTicks>
-        <slowHediff>Relics40k_TemporalDilation</slowHediff>
+        <slowHediff>BEWH_TemporalDilation</slowHediff>
         <slowLingerTicks>90</slowLingerTicks>
         <affectHostileOnly>true</affectHostileOnly>
         <affectDowned>false</affectDowned>
@@ -35,7 +35,7 @@
 
   <!-- On foes inside the field. Refreshed every pulse; fades 1.5s after leaving. -->
   <HediffDef>
-    <defName>Relics40k_TemporalDilation</defName>
+    <defName>BEWH_TemporalDilation</defName>
     <label>temporal dilation</label>
     <description>Caught in the field of a Tempormortis. Every movement is dragged out and every blow lands a heartbeat late - and there is no slipping a strike that has already fallen.</description>
     <hediffClass>HediffWithComps</hediffClass>
@@ -52,19 +52,11 @@
           <RangedCooldownFactor>2.0</RangedCooldownFactor>
           <AimingDelayFactor>2.0</AimingDelayFactor>
           <MeleeDodgeChance>0</MeleeDodgeChance>
+          <IncomingDamageFactor>1.25</IncomingDamageFactor>
         </statFactors>
         <statOffsets>
           <MeleeHitChance>-6</MeleeHitChance>
         </statOffsets>
-        <!-- Fights Last: melee damage types only. Bullets, arrows, explosions and fire are untouched. -->
-        <damageFactors>
-          <Cut>1.25</Cut>
-          <Stab>1.25</Stab>
-          <Blunt>1.25</Blunt>
-          <Scratch>1.25</Scratch>
-          <Poke>1.25</Poke>
-          <Bite>1.25</Bite>
-        </damageFactors>
       </li>
     </stages>
     <comps>
@@ -74,5 +66,38 @@
       </li>
     </comps>
   </HediffDef>
+
+  <HediffDef>
+    <defName>BEWH_KeepingTheVigil</defName>
+    <label>keeping the vigil</label>
+    <description>This warrior is standing the rite of the tempormortis. He may not sleep, may not be drafted, may not take up a weapon and may not put the hourglass down until the sands have run. The Chaplaincy is watching, and so is everything else that noticed the device wake.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <initialSeverity>1</initialSeverity>
+    <defaultLabelColor>(0.75, 0.85, 1.0)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <stages>
+      <li>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="Relics40k.HediffCompProperties_TempormortisRite">
+        <dormantDef>BEWH_TempormortisDormant</dormantDef>
+        <awakenedDef>BEWH_Tempormortis</awakenedDef>
+        <!-- 60000 ticks = 1 in-game day. A raid every 15000 ticks (6 hours). -->
+        <durationTicks>60000</durationTicks>
+        <raidIntervalTicks>15000</raidIntervalTicks>
+        <raidPointsFactor>1</raidPointsFactor>
+        <!-- At least this many years total, split among everyone present who still ages. -->
+        <totalYears>10</totalYears>
+        <minYearsEach>1</minYearsEach>
+        <keptThought>BEWH_VigilKept</keptThought>
+        <brokenThought>BEWH_VigilBroken</brokenThought>
+      </li>
+    </comps>
+  </HediffDef>
+
 
 </Defs>

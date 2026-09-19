@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>BEWH_TakeTempormortis</defName>
+    <driverClass>Relics40k.JobDriver_TakeTempormortis</driverClass>
+    <reportString>lifting the tempormortis from TargetA.</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>

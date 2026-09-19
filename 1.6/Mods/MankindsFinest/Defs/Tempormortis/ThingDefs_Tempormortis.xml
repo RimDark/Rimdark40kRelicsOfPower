@@ -1,25 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="ApparelNoQualityBase">
-    <defName>Relics40k_Tempormortis</defName>
-    <label>tempormortis</label>
-    <description>An arcane device in the shape of a great hourglass, carried by the Judiciars of the Primaris Chapters as they walk the path to the Chaplaincy.\n\nWhen the sands are turned, time itself thickens around the bearer. Foes within reach find their limbs heavy and their blows late, while the Judiciar moves through the moment untouched - and passes sentence at his leisure.\n\nOnly a member of the Chaplaincy may turn the sands.</description>
-    <graphicData>
-      <texPath>Things/Item/Relic/RelicInertPendant</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(0.85, 0.85)</drawSize>
-      <color>(150, 190, 255)</color>
-    </graphicData>
+  <ThingDef ParentName="ApparelNoQualityBase" Name="BEWH_TempormortisBase" Abstract="True">
     <techLevel>Spacer</techLevel>
     <statBases>
       <MaxHitPoints>200</MaxHitPoints>
       <Mass>4</Mass>
       <Flammability>0</Flammability>
       <DeteriorationRate>0</DeteriorationRate>
-      <MarketValue>25000</MarketValue>
       <EquipDelay>2</EquipDelay>
-      <Beauty>8</Beauty>
     </statBases>
     <tradeability>None</tradeability>
     <smeltable>false</smeltable>
@@ -39,16 +28,121 @@
       <layers>
         <li>Belt</li>
       </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="BEWH_TempormortisBase">
+    <defName>BEWH_Tempormortis</defName>
+    <label>tempormortis</label>
+    <description>An arcane device in the shape of a great hourglass, carried by the Judiciars of the Primaris Chapters as they walk the path to the Chaplaincy.\n\nWhen the sands are turned, time itself thickens around the bearer. Foes within reach find their limbs heavy and their blows late, while the Judiciar moves through the moment untouched - and passes sentence at his leisure.\n\nOnly a member of the Chaplaincy may turn the sands.</description>
+    <graphicData>
+      <texPath>Things/BEWH_Tempormortis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.85, 0.85)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>25000</MarketValue>
+      <Beauty>8</Beauty>
+    </statBases>
+    <apparel>
       <abilities>
-        <li>Relics40k_TempormortisTurnTheSands</li>
+        <li>BEWH_TempormortisTurnTheSands</li>
       </abilities>
     </apparel>
     <comps>
       <li Class="Relics40k.CompProperties_TemporalFieldDrawer">
-        <activeHediff>Relics40k_TempormortisActive</activeHediff>
+        <activeHediff>BEWH_TempormortisActive</activeHediff>
         <ringColor>(0.55, 0.7, 1.0, 0.6)</ringColor>
       </li>
     </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BEWH_TempormortisBase">
+    <defName>BEWH_TempormortisDormant</defName>
+    <label>dormant tempormortis</label>
+    <description>An arcane device in the shape of a great hourglass. Its sands are not falling. They are not resting at the bottom either - they hang in the middle of the glass, halfway through a fall that stopped ten thousand years ago.\n\nThe device is whole and it is not broken. It is simply waiting for someone to be worth the trouble of starting again, and it will not take the word of anyone outside the Chaplaincy.\n\nA Judiciar may keep the rite and wake it. The hourglass does not make time; it only moves it. Whatever it spends has to come out of someone.</description>
+    <graphicData>
+      <texPath>Things/BEWH_Tempormortis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.85, 0.85)</drawSize>
+      <color>(120, 128, 140)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>18000</MarketValue>
+      <Beauty>6</Beauty>
+    </statBases>
+    <comps>
+      <li Class="Relics40k.CompProperties_TempormortisRite">
+        <riteHediff>BEWH_KeepingTheVigil</riteHediff>
+        <requiredRanksOneAmong>
+          <li>BEWH_AstartesRankJudiciar</li>
+          <li>BEWH_AstartesRankChaplain</li>
+          <li>BEWH_AstartesRankMasterOfSanctity</li>
+        </requiredRanksOneAmong>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_TempormortisReliquary</defName>
+    <label>judiciar's plinth</label>
+    <description>A black basalt plinth, cut with a single deep channel for the base of an hourglass. The dust on it lies in mid-air a finger's width above the stone and has never come down.</description>
+    <thingClass>Relics40k.Building_TombReliquary</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Furniture/EndTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <color>(58, 66, 82)</color>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>50</pathCost>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <Mass>60</Mass>
+    </statBases>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <maxItemsInCell>1</maxItemsInCell>
+      <deconstructible>false</deconstructible>
+      <fixedStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>BEWH_TempormortisDormant</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <thingDefs>
+            <li>BEWH_TempormortisDormant</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <modExtensions>
+      <li Class="Relics40k.DefModExtension_TempormortisTomb">
+        <dilationCondition>BEWH_TemporalDilationField</dilationCondition>
+        <dormantRelicDef>BEWH_TempormortisDormant</dormantRelicDef>
+        <takeRelicJob>BEWH_TakeTempormortis</takeRelicJob>
+        <requiredRanksOneAmong>
+          <li>BEWH_AstartesRankJudiciar</li>
+          <li>BEWH_AstartesRankChaplain</li>
+          <li>BEWH_AstartesRankMasterOfSanctity</li>
+        </requiredRanksOneAmong>
+      </li>
+    </modExtensions>
   </ThingDef>
 
 </Defs>

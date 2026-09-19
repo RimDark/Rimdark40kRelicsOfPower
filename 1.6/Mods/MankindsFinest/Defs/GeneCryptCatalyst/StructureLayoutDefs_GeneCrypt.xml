@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Hand-authored vault for BEWH_GeneCryptSitePart. Row 0 is the southern edge; the seal sits in
+       the south face so it is broken from outside. Field-compatible with a KCSG export. -->
+  <Relics40k.StructureLayoutDef>
+    <defName>BEWH_GeneCryptVault</defName>
+    <allowRotation>true</allowRotation>
+    <forceGenerateRoof>true</forceGenerateRoof>
+    <randomizeWallStuffAtGen>false</randomizeWallStuffAtGen>
+    <spawnConduits>false</spawnConduits>
+    <layouts>
+      <li>
+        <li>.,.,.,.,.,.,.,.,BEWH_CryptWall_BlocksGranite,.,BEWH_GeneCryptSeal,.,BEWH_CryptWall_BlocksGranite,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,BEWH_CryptWall_BlocksGranite,.,.,.,BEWH_CryptWall_BlocksGranite,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,BEWH_CryptWall_BlocksGranite,.,.,.,BEWH_CryptWall_BlocksGranite,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,BEWH_CryptWall_BlocksGranite,.,.,.,BEWH_CryptWall_BlocksGranite,.,.,.,.,.,.,.,.</li>
+        <li>BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,.,.,.,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,TorchWallLamp_West,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,TorchWallLamp_East,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,.,.,AncientConcreteBarrier,.,.,.,.,.,.,.,.,.,.,.,.,.,AncientConcreteBarrier,.,.,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,.,.,.,Column_BlocksGranite,.,.,.,.,.,.,.,.,.,.,.,Column_BlocksGranite,.,.,.,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,.,.,.,.,.,.,.,AncientConcreteBarrier,.,.,.,AncientConcreteBarrier,.,.,.,.,.,.,.,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,.,.,.,Column_BlocksGranite,.,.,.,.,.,.,.,.,.,.,.,Column_BlocksGranite,.,.,.,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,TorchWallLamp_West,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,TorchWallLamp_East,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,.,.,.,.,.,Wall_BlocksGranite,.,.,.,.,.,.,.,Wall_BlocksGranite,.,.,.,.,.,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,.,Urn,.,.,.,.,.,.,.,BEWH_AscensionEngine,.,.,.,.,.,Urn,.,.,.,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,.,.,.,.,.,Wall_BlocksGranite,.,.,.,.,.,.,.,Wall_BlocksGranite,.,.,.,.,.,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,Shelf_Steel_North,.,.,Shelf_Steel_North,.,Wall_BlocksGranite,TorchWallLamp_North,.,.,.,.,.,TorchWallLamp_North,Wall_BlocksGranite,Shelf_Steel_North,.,.,Shelf_Steel_North,.,BEWH_CryptWall_BlocksGranite</li>
+        <li>BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite,BEWH_CryptWall_BlocksGranite</li>
+      </li>
+    </layouts>
+    <terrainGrid>
+        <li>.,.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,Concrete,Concrete,Concrete,Concrete,Concrete,.,.,.,.,.,.,.,.</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+        <li>Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete,Concrete</li>
+    </terrainGrid>
+  </Relics40k.StructureLayoutDef>
+
+</Defs>

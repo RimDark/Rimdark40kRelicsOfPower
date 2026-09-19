@@ -32,6 +32,10 @@
           <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="KCSG">
+          <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2023507013\1.6\Assemblies\KCSG.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="Core40k">
           <HintPath>..\..\..\..\Rimdark40kFramework\1.6\Assemblies\Core40k.dll</HintPath>
           <Private>False</Private>
@@ -47,20 +51,76 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Relics40kMod.cs" />
-        <Compile Include="Compat\MankindsFinestCompat.cs" />
-        <Compile Include="Comps\CompProperties_UseEffectGeneCryptCatalyst.cs" />
-        <Compile Include="Comps\CompProperties_UseEffectBloodChalice.cs" />
-        <Compile Include="Comps\CompUseEffect_BloodChalice.cs" />
-        <Compile Include="Comps\CompUseEffect_GeneCryptCatalyst.cs" />
-        <Compile Include="Comps\CompProperties_TemporalFieldDrawer.cs" />
-        <Compile Include="Comps\Comp_TemporalFieldDrawer.cs" />
-        <Compile Include="DefModExtensions\DefModExtension_BloodChalice.cs" />
-        <Compile Include="DefModExtensions\DefModExtension_GeneCryptCatalyst.cs" />
-        <Compile Include="Hediffs\Hediff_FrozenInstability.cs" />
-        <Compile Include="Hediffs\HediffCompProperties_TemporalAura.cs" />
-        <Compile Include="Hediffs\HediffComp_TemporalAura.cs" />
-        <Compile Include="Workers\ThoughtWorker_FrozenInstability.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs"/>
+
+        <!-- Shared -->
+        <Compile Include="Shared\Buildings\Building_GuardianSarcophagus.cs" />
+        <Compile Include="Shared\Buildings\Building_ReliquaryPedestal.cs" />
+        <Compile Include="Shared\GameComponents\GameComponent_Relics40kQuests.cs" />
+        <Compile Include="Shared\Lords\LordJob_RelicGuardians.cs" />
+        <Compile Include="Shared\Lords\LordToil_FrozenInTime.cs" />
+        <Compile Include="Shared\Lords\FrozenInTimeUtility.cs" />
+        <Compile Include="Shared\Patches\Patches_FrozenInTime.cs" />
+        <Compile Include="Shared\Sites\BuriedSiteUtility.cs" />
+        <Compile Include="Shared\Sites\SideCaveSettings.cs" />
+        <Compile Include="Shared\Sites\StructureLayoutDef.cs" />
+        <Compile Include="Shared\Sites\StructureLayoutUtility.cs" />
+        <Compile Include="Shared\Sites\LayoutLootEntry.cs" />
+        <Compile Include="Shared\Overlays\SkyOverlay_TintedMist.cs" />
+        <Compile Include="Shared\Quests\QuestNode_ColonyHasGenes.cs" />
+        <Compile Include="Shared\Quests\QuestNode_MountainousSite.cs" />
+        <Compile Include="Shared\Quests\QuestNode_OncePerGame.cs" />
+        <Compile Include="Shared\Quests\QuestNode_RelicShuttleMission.cs" />
+        <Compile Include="Shared\Quests\QuestNode_RequireHemogenicColonist.cs" />
+        <Compile Include="Shared\Quests\QuestNode_RequireRankedColonist.cs" />
+        <Compile Include="Shared\Quests\QuestPart_MarkOncePerGame.cs" />
+        <Compile Include="Shared\Quests\QuestPart_RelicShuttleFee.cs" />
+
+        <!-- Blood Chalice -->
+        <Compile Include="BloodChalice\Comps\CompProperties_UseEffectBloodChalice.cs" />
+        <Compile Include="BloodChalice\Comps\CompUseEffect_BloodChalice.cs" />
+        <Compile Include="BloodChalice\DefModExtensions\DefModExtension_BloodChalice.cs" />
+        <Compile Include="BloodChalice\DefModExtensions\DefModExtension_ExsanguinatingAir.cs" />
+        <Compile Include="BloodChalice\DefModExtensions\DefModExtension_RedCellar.cs" />
+        <Compile Include="BloodChalice\GameConditions\GameCondition_ExsanguinatingAir.cs" />
+        <Compile Include="BloodChalice\Quests\QuestNode_RedCellar.cs" />
+        <Compile Include="BloodChalice\Quests\QuestPart_RedCellar.cs" />
+        <Compile Include="BloodChalice\Sites\GenStep_RedCellar.cs" />
+        <Compile Include="BloodChalice\Sites\SitePartWorker_RedCellar.cs" />
+
+        <!-- Gene-Crypt Catalyst -->
+        <Compile Include="GeneCryptCatalyst\Buildings\Building_AscensionEngine.cs" />
+        <Compile Include="GeneCryptCatalyst\Buildings\Building_GeneCryptSeal.cs" />
+        <Compile Include="GeneCryptCatalyst\DefModExtensions\DefModExtension_AscensionEngine.cs" />
+        <Compile Include="GeneCryptCatalyst\DefModExtensions\DefModExtension_GeneCryptSeal.cs" />
+        <Compile Include="GeneCryptCatalyst\DefModExtensions\DefModExtension_GeneCryptSite.cs" />
+        <Compile Include="GeneCryptCatalyst\Jobs\JobDriver_BreakGeneSeal.cs" />
+        <Compile Include="GeneCryptCatalyst\Quests\QuestNode_AscensionEngine.cs" />
+        <Compile Include="GeneCryptCatalyst\Quests\QuestPart_AscensionEngine.cs" />
+        <Compile Include="GeneCryptCatalyst\Sites\SitePartWorker_GeneCrypt.cs" />
+        <Compile Include="GeneCryptCatalyst\Util\AscensionEngineDefOf.cs" />
+        <Compile Include="GeneCryptCatalyst\Workers\WorkGiver_CarryToAscensionEngine.cs" />
+        <Compile Include="GeneCryptCatalyst\Workers\WorkGiver_EnterAscensionEngine.cs" />
+
+        <!-- Tempormortis -->
+        <Compile Include="Tempormortis\Buildings\Building_TombReliquary.cs" />
+        <Compile Include="Tempormortis\Comps\CompProperties_TemporalFieldDrawer.cs" />
+        <Compile Include="Tempormortis\Comps\CompProperties_TempormortisRite.cs" />
+        <Compile Include="Tempormortis\Comps\Comp_TemporalFieldDrawer.cs" />
+        <Compile Include="Tempormortis\Comps\Comp_TempormortisRite.cs" />
+        <Compile Include="Tempormortis\DefModExtensions\DefModExtension_TemporalDilation.cs" />
+        <Compile Include="Tempormortis\DefModExtensions\DefModExtension_TempormortisTomb.cs" />
+        <Compile Include="Tempormortis\GameConditions\GameCondition_TemporalDilation.cs" />
+        <Compile Include="Tempormortis\Hediffs\HediffCompProperties_TemporalAura.cs" />
+        <Compile Include="Tempormortis\Hediffs\HediffCompProperties_TempormortisRite.cs" />
+        <Compile Include="Tempormortis\Hediffs\HediffComp_TemporalAura.cs" />
+        <Compile Include="Tempormortis\Hediffs\HediffComp_TempormortisRite.cs" />
+        <Compile Include="Tempormortis\Jobs\JobDriver_TakeTempormortis.cs" />
+        <Compile Include="Tempormortis\Sites\GenStep_TempormortisTomb.cs" />
+        <Compile Include="Tempormortis\Sites\SitePartWorker_TempormortisTomb.cs" />
+        <Compile Include="Tempormortis\Util\TempormortisUtility.cs" />
+
+        <!-- Properties -->
+        <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

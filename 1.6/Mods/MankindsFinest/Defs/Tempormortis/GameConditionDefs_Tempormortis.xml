@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <GameConditionDef>
+    <defName>BEWH_TemporalDilationField</defName>
+    <conditionClass>Relics40k.GameCondition_TemporalDilation</conditionClass>
+    <label>temporal dilation</label>
+    <description>A tempormortis is running somewhere on this map and has been for a very long time. Everything inside the field moves, aims and strikes at a fraction of its proper speed - attackers and defenders alike. Nothing here gets to hurry.</description>
+    <letterText>Everything inside this field moves, aims and strikes at a fraction of its proper speed - yours as much as theirs. Nothing here gets to hurry.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+    <endMessage>The sands finish falling. Time comes back.</endMessage>
+    <canBePermanent>true</canBePermanent>
+    <natural>false</natural>
+    <modExtensions>
+      <li Class="Relics40k.DefModExtension_TemporalDilation">
+        <dilationHediff>BEWH_TemporalDilation</dilationHediff>
+        <anchorDef>BEWH_TempormortisDormant</anchorDef>
+        <pulseIntervalTicks>30</pulseIntervalTicks>
+        <lingerTicks>90</lingerTicks>
+        <affectDowned>true</affectDowned>
+      </li>
+    </modExtensions>
+  </GameConditionDef>
+
+</Defs>

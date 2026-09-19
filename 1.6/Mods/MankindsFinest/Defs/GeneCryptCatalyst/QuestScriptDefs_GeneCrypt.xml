@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>BEWH_TheStandingOrder</defName>
+    <label>The Standing Order</label>
+    <questScriptDef>BEWH_TheStandingOrder</questScriptDef>
+    <baseChance>0</baseChance> <!-- given by Core40k.StorytellerComp_PersistentQuest -->
+  </IncidentDef>
+
+  <QuestScriptDef>
+    <defName>BEWH_TheStandingOrder</defName>
+    <isRootSpecial>true</isRootSpecial>
+    <rootMinPoints>500</rootMinPoints>
+    <defaultChallengeRating>2</defaultChallengeRating>
+    <autoAccept>false</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->The Standing Order</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A surveyor's echo off [map_definite] has turned up a vault in the rock, Unification-era, opened once and then walked away from.\n\nThere is nothing left inside it worth hauling. What is left is the forge: the machine built to finish the thunder warrior template, to cut out the proto-organs that are killing them and lay the true Astartes gene-line down in their place. It was never dismantled. The order came instead to cull the thunder warriors rather than mend them, and the vault was simply abandoned mid-programme.\n\nThe seal reads Unification blood and opens for nothing else, and so does the forge behind it. There is charge enough for one man, and whatever the programme had in stores is still down there with it. The garrison left down there is still sleeping around it, and it was given the same order everyone else was.\n\nStart the machine and it will wake. The forge will not survive the working - whoever is inside when it finishes is the only one who ever will be.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+
+        <!-- Offered only while the colony actually has a thunder warrior to send. -->
+        <li Class="Relics40k.QuestNode_ColonyHasGenes">
+          <genes>
+            <li>BEWH_ProtoOssmodula</li>
+            <li>BEWH_Musculeator</li>
+            <li>BEWH_Mentanifex</li>
+            <li>BEWH_Vigoranis</li>
+            <li>BEWH_Hyperanatomica</li>
+            <li>BEWH_Furybound</li>
+          </genes>
+        </li>
+
+        <li Class="QuestNode_QuestUnique">
+          <tag>BEWH_TheStandingOrder</tag>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_Root_Site">
+          <sitePartDef>BEWH_GeneCryptSitePart</sitePartDef>
+          <distanceFromColonyRange>3~11</distanceFromColonyRange>
+        </li>
+
+        <li Class="Relics40k.QuestNode_AscensionEngine">
+          <site>$site</site>
+          <sealDef>BEWH_GeneCryptSeal</sealDef>
+          <engineDef>BEWH_AscensionEngine</engineDef>
+          <inSignalMapGenerated>site.MapGenerated</inSignalMapGenerated>
+          <inSignalMapRemoved>site.MapRemoved</inSignalMapRemoved>
+        </li>
+
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

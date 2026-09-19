@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Destructible on purpose: killing it before the procedure finishes is how the quest fails. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_AscensionEngine</defName>
+    <label>ascension engine</label>
+    <thingClass>Relics40k.Building_AscensionEngine</thingClass>
+    <description>A Unification-era gene-forge, left standing in an empty vault with its reservoirs still full. This is the machine that was built to finish what the thunder warrior template started - to strip out the failing proto-organs and lay down the perfected Astartes gene-line in their place.\n\nIt was never decommissioned. It was simply abandoned, along with the men it was meant to save, once the decision was taken to cull them instead of repairing them.\n\nThe intake reads gene-signatures and will open for nothing but Unification blood. There is enough reservoir left for exactly one man, and the forge will not survive the working.</description>
+    <graphicData>
+      <texPath>Things/Building/GeneseedGestator/BEWH_GeneseedGestator</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4, 4)</drawSize>
+      <damageData>
+        <rect>(0.1,0.1,2.8,1.8)</rect>
+      </damageData>
+    </graphicData>
+    <size>(3, 2)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <tickerType>Normal</tickerType>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <statBases>
+      <MaxHitPoints>2500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <isInert>true</isInert>
+      <haulToContainerDuration>120</haulToContainerDuration>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <modExtensions>
+      <li Class="Relics40k.DefModExtension_AscensionEngine">
+        <requiredGenes>
+          <li>BEWH_ProtoOssmodula</li>
+          <li>BEWH_Musculeator</li>
+          <li>BEWH_Mentanifex</li>
+          <li>BEWH_Vigoranis</li>
+          <li>BEWH_Hyperanatomica</li>
+          <li>BEWH_Furybound</li>
+        </requiredGenes>
+        <genesToRemove>
+          <li>BEWH_ProtoOssmodula</li>
+          <li>BEWH_Musculeator</li>
+          <li>BEWH_Furybound</li>
+        </genesToRemove>
+        <genesToAdd>
+          <li>BEWH_SecondaryHeart</li>
+          <li>BEWH_Ossmodula</li>
+          <li>BEWH_Biscopea</li>
+          <li>BEWH_Haemastamen</li>
+          <li>BEWH_LarramansOrgan</li>
+          <li>BEWH_CatalepseanNode</li>
+          <li>BEWH_Preomnor</li>
+          <li>BEWH_Omophagea</li>
+          <li>BEWH_MultiLung</li>
+          <li>BEWH_Occulobe</li>
+          <li>BEWH_LymansEar</li>
+          <li>BEWH_SusAnMembrane</li>
+          <li>BEWH_Melanochrome</li>
+          <li>BEWH_OoliticKidney</li>
+          <li>BEWH_Neuroglottis</li>
+          <li>BEWH_Mucranoid</li>
+          <li>BEWH_BetchersGland</li>
+          <li>BEWH_ProgenoidGlands</li>
+          <li>BEWH_BlackCarapace</li>
+        </genesToAdd>
+        <newXenotype>BEWH_SpaceMarine</newXenotype>
+        <newXenotypeName>Thunderborn Astartes</newXenotypeName>
+        <newXenotypeIcon>BEWH_AstartesIcon</newXenotypeIcon>
+        <comaHediff>BEWH_GeneCryptComa</comaHediff>
+        <procedureTicks>20000</procedureTicks>
+        <firstWaveDelayTicks>2500</firstWaveDelayTicks>
+        <waveIntervalTicks>5500</waveIntervalTicks>
+        <maxWaves>4</maxWaves>
+        <waveThreatPointsFactor>0.5</waveThreatPointsFactor>
+        <waveEscalation>0.25</waveEscalation>
+        <burnoutLeavings>
+          <li>ChunkSlagSteel</li>
+          <li>ChunkSlagSteel</li>
+        </burnoutLeavings>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- The seal. Indestructible on purpose: the gene-lock is the only way in. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_GeneCryptSeal</defName>
+    <label>gene-crypt seal</label>
+    <thingClass>Relics40k.Building_GeneCryptSeal</thingClass>
+    <description>An adamantium hatch sunk into the rock, ringed with gene-readers that have been waiting for a very long time. There is no mechanism to force and nothing to cut - the crypt opens for the blood it was built for, or it does not open at all.\n\nStencilled around the rim, half-scoured by centuries of weather, is a disposal order rather than a storage manifest. Whatever is still down there was written off with the men it was meant for.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientLockerBank</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5, 1.5)</drawSize>
+    </graphicData>
+    <size>(3, 1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <blockLight>true</blockLight>
+    <castEdgeShadows>true</castEdgeShadows>
+    <blockWind>true</blockWind>
+    <useHitPoints>false</useHitPoints>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <isInert>true</isInert>
+    </building>
+    <modExtensions>
+      <li Class="Relics40k.DefModExtension_GeneCryptSeal">
+        <requiredGenes>
+          <li>BEWH_ProtoOssmodula</li>
+          <li>BEWH_Musculeator</li>
+          <li>BEWH_Mentanifex</li>
+          <li>BEWH_Vigoranis</li>
+          <li>BEWH_Hyperanatomica</li>
+          <li>BEWH_Furybound</li>
+        </requiredGenes>
+        <engineDef>BEWH_AscensionEngine</engineDef>
+        <breakSealJob>BEWH_BreakGeneSeal</breakSealJob>
+        <breakSealTicks>5000</breakSealTicks>
+        <treasureSetMaker>MapGen_AncientTempleContents</treasureSetMaker>
+        <treasureRadius>13</treasureRadius>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

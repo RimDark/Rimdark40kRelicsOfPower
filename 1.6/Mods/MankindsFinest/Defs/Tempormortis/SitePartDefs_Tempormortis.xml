@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SitePartDef>
+    <defName>BEWH_TempormortisTomb</defName>
+    <label>stopped tomb</label>
+    <description>A buried chamber in which nothing has moved for ten thousand years, because nothing has been allowed to.</description>
+    <workerClass>Relics40k.SitePartWorker_TempormortisTomb</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/ItemStash</expandingIconTexture>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <arrivedLetterLabelPart>the stopped tomb</arrivedLetterLabelPart>
+    <arrivedLetter>The passage runs a long way into the rock before it opens out. The air in here is thick. Not foul - thick. Dust hangs where it was shaken loose and has not landed. Sound arrives late.\n\nEveryone who walks in will be dragged to a fraction of their proper speed, and so is everything else in here. There are bodies in the chamber that are not bodies. They are still holding their weapons up.\n\nThe hourglass is on the plinth in the middle, and it is what is doing this. Lift it and the field dies - for you, and for them.</arrivedLetter>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>500</minThreatPoints>
+    <tags>
+      <li>BEWH_TempormortisTomb</li>
+    </tags>
+    <modExtensions>
+      <li Class="Relics40k.DefModExtension_TempormortisTomb">
+        <dilationCondition>BEWH_TemporalDilationField</dilationCondition>
+        <reliquaryDef>BEWH_TempormortisReliquary</reliquaryDef>
+        <dormantRelicDef>BEWH_TempormortisDormant</dormantRelicDef>
+        <takeRelicJob>BEWH_TakeTempormortis</takeRelicJob>
+        <wallStuff>BlocksGranite</wallStuff>
+        <floorTerrain>FlagstoneGranite</floorTerrain>
+        <filthDef>Filth_RubbleRock</filthDef>
+        <filthCount>10</filthCount>
+        <corpseCasketDef>Sarcophagus</corpseCasketDef>
+        <!-- Guardians come from whichever hostile faction is loaded. Add the defNames of any
+             xenos or traitor factions you want preferred; missing ones are skipped silently. -->
+        <preferredFactionDefNames />
+        <guardianCount>4</guardianCount>
+        <guardianMinPoints>800</guardianMinPoints>
+        <roomLayout>BEWH_Tempormortis</roomLayout>
+        <lootThingSetMaker>MapGen_DefaultStockpile</lootThingSetMaker>
+        <lootMarketValueRange>200~450</lootMarketValueRange>
+        <!-- roomSize, wallStuff and floorTerrain are only used when roomLayout is unset. -->
+        <roomSize>15</roomSize>
+        <roofRoom>true</roofRoom>
+        <frozenDuty>BEWH_FrozenInTime</frozenDuty>
+        <minRockDepth>20</minRockDepth>
+        <cavityPadding>3</cavityPadding>
+        <tunnelWidthRange>2~3</tunnelWidthRange>
+        <tunnelJitterChance>0.3</tunnelJitterChance>
+        <roofTunnel>true</roofTunnel>
+        <sideCaves>
+          <countRange>2~4</countRange>
+          <lengthRange>6~16</lengthRange>
+          <widthRange>1~3</widthRange>
+          <wanderChance>0.35</wanderChance>
+          <chamberRadius>3</chamberRadius>
+          <openChamberChance>0.25</openChamberChance>
+          <chunkCountRange>1~3</chunkCountRange>
+        </sideCaves>
+        <requiredRanksOneAmong>
+          <li>BEWH_AstartesRankJudiciar</li>
+          <li>BEWH_AstartesRankChaplain</li>
+          <li>BEWH_AstartesRankMasterOfSanctity</li>
+        </requiredRanksOneAmong>
+      </li>
+    </modExtensions>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>BEWH_TempormortisTomb</defName>
+    <linkWithSite>BEWH_TempormortisTomb</linkWithSite>
+    <order>400</order>
+    <genStep Class="Relics40k.GenStep_TempormortisTomb" />
+  </GenStepDef>
+
+</Defs>

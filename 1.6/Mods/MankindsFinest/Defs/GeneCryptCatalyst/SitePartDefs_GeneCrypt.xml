@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SitePartDef>
+    <defName>BEWH_GeneCryptSitePart</defName>
+    <label>gene-crypt</label>
+    <description>A sealed Unification-era gene-crypt. The seal reads gene-signatures, and a garrison was left sleeping around it.</description>
+    <workerClass>Relics40k.SitePartWorker_GeneCrypt</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/ItemStash</expandingIconTexture>
+    <tags>
+      <li>BEWH_GeneCrypt</li>
+    </tags>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>500</minThreatPoints>
+    <selectionWeight>1</selectionWeight>
+    <approachOrderString>Travel to {0} to break the gene-seal.</approachOrderString>
+    <approachingReportString>Travelling to {0}.</approachingReportString>
+    <arrivedLetterLabelPart>Gene-crypt reached</arrivedLetterLabelPart>
+    <arrivedLetter>Your caravan has reached the gene-crypt. The seal is intact and unpowered, and nothing above ground has moved in a very long time. There is wreckage scattered across the approach and nothing else.\n\nOnly a thunder warrior can break the seal - select one and right-click it.\n\nThere are mechanoids lying dormant around the vault. They will not stay dormant.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <modExtensions>
+      <li Class="Relics40k.DefModExtension_GeneCryptSite">
+        <sealDef>BEWH_GeneCryptSeal</sealDef>
+        <layoutDef>BEWH_GeneCryptVault</layoutDef>
+        <wallStuff>BlocksGranite</wallStuff>
+        <layoutLoot>
+          <li><thingDef>MedicineUltratech</thingDef><countRange>4~8</countRange></li>
+          <li><thingDef>ComponentSpacer</thingDef><countRange>2~4</countRange></li>
+          <li><thingDef>Plasteel</thingDef><countRange>40~80</countRange></li>
+          <li><thingDef>Hyperweave</thingDef><countRange>20~40</countRange><chance>0.6</chance></li>
+          <li><thingDef>Gold</thingDef><countRange>30~60</countRange><chance>0.5</chance></li>
+          <li><thingDef>Uranium</thingDef><countRange>25~50</countRange><chance>0.5</chance></li>
+        </layoutLoot>
+        <garrisonPointsFactor>1</garrisonPointsFactor>
+        <garrisonRadius>8</garrisonRadius>
+        <decorationCountRange>12~20</decorationCountRange>
+        <decorationRadius>14</decorationRadius>
+        <decorationDefs>
+          <li>AncientConcreteBarrier</li>
+          <li>AncientLamppost</li>
+          <li>ChunkSlagSteel</li>
+          <li>Urn</li>
+        </decorationDefs>
+      </li>
+    </modExtensions>
+  </SitePartDef>
+
+</Defs>

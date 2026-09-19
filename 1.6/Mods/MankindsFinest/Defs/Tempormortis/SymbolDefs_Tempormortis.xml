@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- KCSG only auto-generates symbols for vanilla and DLC content, so modded defs used as
+       layout tokens need one declared. Without this the token resolves to nothing and the cell
+       is left empty. -->
+  <KCSG.SymbolDef>
+    <defName>BEWH_TempormortisReliquary</defName>
+    <thing>BEWH_TempormortisReliquary</thing>
+  </KCSG.SymbolDef>
+
+</Defs>

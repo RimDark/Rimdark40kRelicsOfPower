@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Blood Chalice -->
+  <Relics.BloodChalice.NotHemogenic>blood does not run red enough</Relics.BloodChalice.NotHemogenic>
+  <Relics.BloodChalice.OnCooldown>chalice is still refilling ({0})</Relics.BloodChalice.OnCooldown>
+  <Relics.BloodChalice.Ready>Full. Ready to be drunk from.</Relics.BloodChalice.Ready>
+  <Relics.BloodChalice.Refilling>Refilling: {0}</Relics.BloodChalice.Refilling>
+  <Relics.BloodChalice.Confirm>{PAWN_nameDef} will drain the chalice.\n\nEvery wound, scar, sickness and addiction will be burned out of {PAWN_objective}, and {PAWN_possessive} hemogen and deathrest will be filled to the brim. Lost limbs will not return.\n\nThe chalice will take 15 days to refill.</Relics.BloodChalice.Confirm>
+  <Relics.BloodChalice.Message>{PAWN_nameDef} drains the blood chalice. The wounds close as {PAWN_pronoun} drinks.</Relics.BloodChalice.Message>
+  <Relics.BloodChalice.GuardiansWake>The chalice leaves the plinth, and the brothers around it get up.</Relics.BloodChalice.GuardiansWake>
+  <Relics.BloodChalice.GuardianFellRefilling>A lost brother falls, and the chalice drinks him. Refilling: {0}.</Relics.BloodChalice.GuardianFellRefilling>
+  <Relics.BloodChalice.GuardianFellFull>A lost brother falls, and the chalice drinks him. It is full.</Relics.BloodChalice.GuardianFellFull>
+
+  <!-- Gene-Crypt Catalyst -->
+  <Relics.GeneCryptCatalyst.SealNotThunderWarrior>only a thunder warrior can break this seal</Relics.GeneCryptCatalyst.SealNotThunderWarrior>
+  <Relics.GeneCryptCatalyst.AlreadyOpen>already broken</Relics.GeneCryptCatalyst.AlreadyOpen>
+  <Relics.GeneCryptCatalyst.BreakSeal>Break the gene-seal</Relics.GeneCryptCatalyst.BreakSeal>
+  <Relics.GeneCryptCatalyst.InspectSealed>Sealed. The gene-readers are live.</Relics.GeneCryptCatalyst.InspectSealed>
+  <Relics.GeneCryptCatalyst.InspectOpen>Broken open.</Relics.GeneCryptCatalyst.InspectOpen>
+  <Relics.GeneCryptCatalyst.OpenedLetterLabel>The standing order</Relics.GeneCryptCatalyst.OpenedLetterLabel>
+  <Relics.GeneCryptCatalyst.OpenedLetterText>The seal reads {PAWN_nameDef}'s blood, accepts it, and opens.\n\nThe crypt was not built to keep the catalyst safe. It was built to bury it, and the garrison left down here was given one instruction on the way out: that thunder warriors were to be put down, not repaired. Nobody ever came back to tell it otherwise.\n\nThe machines are waking up.</Relics.GeneCryptCatalyst.OpenedLetterText>
+  <Relics.GeneCryptCatalyst.Enter>Enter the ascension engine</Relics.GeneCryptCatalyst.Enter>
+  <Relics.GeneCryptCatalyst.EngineNotThunderWarrior>the intake will not open for this blood</Relics.GeneCryptCatalyst.EngineNotThunderWarrior>
+  <Relics.GeneCryptCatalyst.Busy>already running</Relics.GeneCryptCatalyst.Busy>
+  <Relics.GeneCryptCatalyst.Spent>burned out</Relics.GeneCryptCatalyst.Spent>
+  <Relics.GeneCryptCatalyst.InspectIdle>Charged. Awaiting a thunder warrior.</Relics.GeneCryptCatalyst.InspectIdle>
+  <Relics.GeneCryptCatalyst.InspectRunning>Working: {0} remaining</Relics.GeneCryptCatalyst.InspectRunning>
+  <Relics.GeneCryptCatalyst.InspectSpent>Burned out. The reservoirs are dry.</Relics.GeneCryptCatalyst.InspectSpent>
+  <Relics.GeneCryptCatalyst.Confirm>{PAWN_nameDef} will be sealed into the forge.\n\nThe proto-ossmodula, musculeator and furybound sequences will be cut out and the full Astartes gene-line laid down in their place. {PAWN_pronoun} will be comatose for 5 days afterwards.\n\nThe machine cannot be stopped once it starts, and it will not survive the working. If it is destroyed before it finishes, the ascension is lost.\n\nSomething down here will wake up when it does.</Relics.GeneCryptCatalyst.Confirm>
+  <Relics.GeneCryptCatalyst.WaveIncoming>The crypt is sending another wave ({0}/{1}).</Relics.GeneCryptCatalyst.WaveIncoming>
+  <Relics.GeneCryptCatalyst.StartedLetterLabel>The forge wakes</Relics.GeneCryptCatalyst.StartedLetterLabel>
+  <Relics.GeneCryptCatalyst.StartedLetterText>The intake accepts {PAWN_nameDef} and closes over {PAWN_objective}.\n\nSomewhere below, something that has been waiting a very long time registers that the programme has resumed - and remembers the order it was left with. Hold the forge until it finishes. There will be no second attempt.</Relics.GeneCryptCatalyst.StartedLetterText>
+  <Relics.GeneCryptCatalyst.AscendedLetterLabel>Thunderborn Astartes: {PAWN_nameDef}</Relics.GeneCryptCatalyst.AscendedLetterLabel>
+  <Relics.GeneCryptCatalyst.AscendedLetterText>The forge opens and {PAWN_nameDef} falls out of it, remade. The failing proto-organs are gone, the furybound sequence is burned out, and the true Astartes gene-line has taken in their place.\n\n{PAWN_pronoun} will be comatose for 5 days and must be carried. Get {PAWN_objective} home.\n\nBehind {PAWN_objective} the forge is cooking itself to slag. It was built for one man and it has had him.</Relics.GeneCryptCatalyst.AscendedLetterText>
+
+  <!-- Tempormortis -->
+  <Relics.Tempormortis.NotChaplaincy>not of the Chaplaincy</Relics.Tempormortis.NotChaplaincy>
+  <Relics.Tempormortis.AlreadyTaken>the plinth is empty</Relics.Tempormortis.AlreadyTaken>
+  <Relics.Tempormortis.TakeRelic>Lift the tempormortis</Relics.Tempormortis.TakeRelic>
+  <Relics.Tempormortis.InspectHolding>A stopped hourglass rests here.</Relics.Tempormortis.InspectHolding>
+  <Relics.Tempormortis.InspectEmpty>The channel in the stone is empty.</Relics.Tempormortis.InspectEmpty>
+  <Relics.Tempormortis.InspectDormant>Dormant. The sands hang halfway down.</Relics.Tempormortis.InspectDormant>
+  <Relics.Tempormortis.Unmoved>Unmoved</Relics.Tempormortis.Unmoved>
+  <Relics.Tempormortis.GuardiansWake>The field dies, and everything in the chamber finishes the step it was taking.</Relics.Tempormortis.GuardiansWake>
+  <Relics.Tempormortis.TakenLetterLabel>The sands come down</Relics.Tempormortis.TakenLetterLabel>
+  <Relics.Tempormortis.TakenLetterText>{PAWN_nameDef} lifts the hourglass off the plinth and the chamber lets go of its breath. Dust that has hung in the air since before the Imperium finishes falling. Sound arrives on time again. So does everything else in here. They were mid-charge when the Judiciar stopped them, and as far as they are concerned no time has passed at all. The device is dormant and will stay dormant. Waking it is a rite, and the rite is kept at home.</Relics.Tempormortis.TakenLetterText>
+  <Relics.Tempormortis.BeginRite>Begin the rite</Relics.Tempormortis.BeginRite>
+  <Relics.Tempormortis.BeginRiteDesc>Stand the vigil of the tempormortis for one day. The keeper may not sleep, may not be drafted, may not carry a weapon and may not remove the hourglass until the sands have run. The enemy will come every six hours and someone else will have to meet them. Waking the device costs time, and the keeper has none to spare. It will be taken out of everyone in the colony who still ages.</Relics.Tempormortis.BeginRiteDesc>
+  <Relics.Tempormortis.RiteUnderway>already keeping the vigil</Relics.Tempormortis.RiteUnderway>
+  <Relics.Tempormortis.RiteRemaining>Sands remaining: {0}</Relics.Tempormortis.RiteRemaining>
+  <Relics.Tempormortis.RiteBegunLetterLabel>The vigil begins</Relics.Tempormortis.RiteBegunLetterLabel>
+  <Relics.Tempormortis.RiteBegunLetterText>{PAWN_nameDef} sets the hourglass at {PAWN_possessive} belt, puts down {PAWN_possessive} weapon and stops moving. For one day {PAWN_pronoun} is not a warrior. Whoever comes in that day is someone else's problem - and something always comes.</Relics.Tempormortis.RiteBegunLetterText>
+  <Relics.Tempormortis.BrokeLost>the keeper was lost</Relics.Tempormortis.BrokeLost>
+  <Relics.Tempormortis.BrokeUnworn>the hourglass left the keeper</Relics.Tempormortis.BrokeUnworn>
+  <Relics.Tempormortis.BrokeUnconscious>the keeper could not stay awake</Relics.Tempormortis.BrokeUnconscious>
+  <Relics.Tempormortis.BrokeDrafted>the keeper took up the fight</Relics.Tempormortis.BrokeDrafted>
+  <Relics.Tempormortis.BrokeArmed>the keeper took up a weapon</Relics.Tempormortis.BrokeArmed>
+  <Relics.Tempormortis.RiteBrokenLetterLabel>The vigil breaks</Relics.Tempormortis.RiteBrokenLetterLabel>
+  <Relics.Tempormortis.RiteBrokenLetterText>The sands stop: {REASON}. The hourglass is dormant again, and no further along than it was. {PAWN_nameDef} may stand the rite again whenever {PAWN_pronoun} is ready to be useless for another day.</Relics.Tempormortis.RiteBrokenLetterText>
+  <Relics.Tempormortis.RiteKeptLetterLabel>The sands run</Relics.Tempormortis.RiteKeptLetterLabel>
+  <Relics.Tempormortis.RiteKeptLetterText>{PAWN_nameDef} has kept the vigil, and the tempormortis is awake. It did not make the hours it needed. It took them. {PAWN_nameDef} had none to give - {PAWN_possessive} gene-line barely spends any - so the device reached past {PAWN_objective} and took {YEARS} years out of the {COUNT} people in this colony who still age. None of them were asked. The hourglass will turn for the Chaplaincy now.</Relics.Tempormortis.RiteKeptLetterText>
+  <Relics.Tempormortis.RiteKeptNoPayersLetterText>{PAWN_nameDef} has kept the vigil, and the tempormortis is awake. It reached for the hours it was owed and found nobody here who spends them. Every soul in this colony is built to outlast the question. The device took nothing, this time.</Relics.Tempormortis.RiteKeptNoPayersLetterText>
+  <Relics.Tempormortis.RaidFailed>Nothing answered the sands this time.</Relics.Tempormortis.RaidFailed>
+
+  <!-- Shared -->
+  <Relics.Shared.LighterNeedSilver>{0} silver for the passage</Relics.Shared.LighterNeedSilver>
+  <Relics.Shared.LighterWaiting>Lighter departs in</Relics.Shared.LighterWaiting>
+  <Relics.Shared.LighterLeftLabel>The lighter has gone</Relics.Shared.LighterLeftLabel>
+  <Relics.Shared.LighterLeftColonyText>The rogue trader's factor would not wait any longer. The lighter has burned for orbit with an empty hold, and the tile reference went with it.</Relics.Shared.LighterLeftColonyText>
+  <Relics.Shared.LighterLeftTombText>The lighter has burned for orbit without our people aboard. Whoever is still at the mountain will have to walk home.</Relics.Shared.LighterLeftTombText>
+
+</LanguageData>
