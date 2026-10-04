@@ -7,6 +7,7 @@
        nudge gizmos that log the values to paste back here. -->
   <ThingDef ParentName="BuildingBase" Name="BEWH_PedestalBase" Abstract="True">
     <thingClass>Building</thingClass>
+    <useHitPoints>false</useHitPoints>
     <graphicData>
       <texPath>Things/BEWH_Pedestal</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -24,7 +25,6 @@
     <size>(1,1)</size>
     <tickerType>Never</tickerType>
     <statBases>
-      <MaxHitPoints>400</MaxHitPoints>
       <Flammability>0</Flammability>
       <Beauty>6</Beauty>
       <Mass>60</Mass>

@@ -128,12 +128,20 @@ public static class BuriedSiteUtility
     public static bool TryFindBuriedCenter(Map map, IntVec2 size, int cavityPadding, int minRockDepth, out IntVec3 center)
     {
         var depth = BuildDepthGrid(map);
+        var margin = cavityPadding + Mathf.Max(minRockDepth, 0) + 2;
+
+        return TryFindCenterWithMargin(map, size, margin, depth, out center)
+            || TryFindCenterWithMargin(map, size, cavityPadding + 2, depth, out center);
+    }
+
+    private static bool TryFindCenterWithMargin(Map map, IntVec2 size, int margin, int[] depth, out IntVec3 center)
+    {
         var indices = map.cellIndices;
         var usedRects = MapGenerator.GetOrGenerateVar<List<CellRect>>("UsedRects");
-        var margin = cavityPadding + Mathf.Max(minRockDepth, 0) + 2;
 
         center = IntVec3.Invalid;
         var bestScore = -1;
+        var bestUnsupported = int.MaxValue;
 
         for (var x = margin; x < map.Size.x - margin; x += 3)
         {
@@ -148,20 +156,21 @@ public static class BuriedSiteUtility
                 }
 
                 var score = int.MaxValue;
+                var unsupported = 0;
 
                 foreach (var cell in rect)
                 {
                     if (!cell.SupportsStructureType(map, TerrainAffordanceDefOf.Heavy))
                     {
-                        score = -1;
-                        break;
+                        unsupported++;
                     }
 
                     score = Mathf.Min(score, depth[indices.CellToIndex(cell)]);
                 }
 
-                if (score > bestScore)
+                if (unsupported < bestUnsupported || (unsupported == bestUnsupported && score > bestScore))
                 {
+                    bestUnsupported = unsupported;
                     bestScore = score;
                     center = candidate;
                 }
@@ -169,6 +178,24 @@ public static class BuriedSiteUtility
         }
 
         return center.IsValid;
+    }
+
+    /// <summary>
+    /// Swaps terrain that cannot carry heavy structures for natural rock floor, so a buried site
+    /// can sit where water or marsh happened to generate.
+    /// </summary>
+    public static void SolidifyTerrain(Map map, CellRect rect)
+    {
+        var rockDef = Find.World.NaturalRockTypesIn(map.Tile).RandomElementWithFallback(ThingDefOf.Sandstone);
+        var floor = rockDef?.building?.naturalTerrain ?? TerrainDefOf.Gravel;
+
+        foreach (var cell in rect.ClipInsideMap(map))
+        {
+            if (!cell.SupportsStructureType(map, TerrainAffordanceDefOf.Heavy))
+            {
+                map.terrainGrid.SetTerrain(cell, floor);
+            }
+        }
     }
 
     /// <summary>

@@ -5,8 +5,8 @@ using Verse;
 namespace Relics40k;
 
 /// <summary>
-/// Like QuestNode_OncePerColony, but consumes the tag when the quest is accepted rather than when
-/// it is generated, so declining an offer does not burn the quest for the save.
+/// Like QuestNode_OncePerColony, but consumes the tag when the quest ends in success rather than
+/// when it is generated, so a declined or failed run does not burn the quest for the save.
 /// </summary>
 public class QuestNode_OncePerGame : QuestNode
 {
@@ -32,9 +32,7 @@ public class QuestNode_OncePerGame : QuestNode
 
         QuestGen.quest.AddPart(new QuestPart_MarkOncePerGame
         {
-            inSignal = slate.Get<string>("inSignal"),
-            tag = value,
-            signalListenMode = QuestPart.SignalListenMode.OngoingOrNotYetAccepted
+            tag = value
         });
     }
 }

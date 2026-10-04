@@ -5,15 +5,13 @@ namespace Relics40k;
 
 public class QuestPart_MarkOncePerGame : QuestPart
 {
-    public string inSignal;
-
     public string tag;
 
-    public override void Notify_QuestSignalReceived(Signal signal)
+    public override void Cleanup()
     {
-        base.Notify_QuestSignalReceived(signal);
+        base.Cleanup();
 
-        if (signal.tag != inSignal || tag.NullOrEmpty())
+        if (tag.NullOrEmpty() || quest.State != QuestState.EndedSuccess)
         {
             return;
         }
@@ -24,7 +22,6 @@ public class QuestPart_MarkOncePerGame : QuestPart
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Values.Look(ref inSignal, "inSignal");
         Scribe_Values.Look(ref tag, "tag");
     }
 }

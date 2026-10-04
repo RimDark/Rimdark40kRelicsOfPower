@@ -30,7 +30,18 @@ public class QuestNode_RelicShuttleMission : QuestNode
 
     protected override bool TestRunInt(Slate slate)
     {
-        return shipDef.GetValue(slate) != null;
+        return shipDef.GetValue(slate) != null && HasEnoughColonists(slate);
+    }
+
+    private bool HasEnoughColonists(Slate slate)
+    {
+        var required = Mathf.Max(1, requiredPawnCount.GetValue(slate));
+        var map = slate.Get<Map>("map");
+        var available = map != null
+            ? map.mapPawns.FreeColonistsSpawnedCount
+            : PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonists.Count;
+
+        return available >= required;
     }
 
     protected override void RunInt()

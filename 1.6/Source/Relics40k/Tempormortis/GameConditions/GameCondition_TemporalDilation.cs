@@ -16,6 +16,8 @@ public class GameCondition_TemporalDilation : GameCondition
         new Color(0.6f, 0.65f, 0.8f),
         0.85f);
 
+    private static readonly System.Collections.Generic.List<Thing> tmpAnchors = new System.Collections.Generic.List<Thing>();
+
     public override int TransitionTicks => 600;
 
     private DefModExtension_TemporalDilation Extension => def.GetModExtension<DefModExtension_TemporalDilation>();
@@ -59,7 +61,12 @@ public class GameCondition_TemporalDilation : GameCondition
     {
         for (var i = 0; i < maps.Count; i++)
         {
-            if (maps[i].listerThings.ThingsOfDef(anchorDef).Count > 0)
+            ThingOwnerUtility.GetAllThingsRecursively(maps[i], ThingRequest.ForDef(anchorDef), tmpAnchors);
+
+            var found = tmpAnchors.Count > 0;
+            tmpAnchors.Clear();
+
+            if (found)
             {
                 return true;
             }

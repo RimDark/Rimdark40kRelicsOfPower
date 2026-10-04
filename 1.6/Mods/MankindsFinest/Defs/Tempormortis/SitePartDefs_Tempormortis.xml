@@ -38,6 +38,7 @@
         <roomSize>15</roomSize>
         <roofRoom>true</roofRoom>
         <frozenDuty>BEWH_FrozenInTime</frozenDuty>
+        <oncePerGameTag>BEWH_TempormortisTomb</oncePerGameTag>
         <minRockDepth>20</minRockDepth>
         <cavityPadding>3</cavityPadding>
         <tunnelWidthRange>2~3</tunnelWidthRange>

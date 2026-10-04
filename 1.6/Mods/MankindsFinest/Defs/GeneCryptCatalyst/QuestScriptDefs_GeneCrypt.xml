@@ -5,7 +5,7 @@
     <defName>BEWH_TheStandingOrder</defName>
     <label>The Standing Order</label>
     <questScriptDef>BEWH_TheStandingOrder</questScriptDef>
-    <baseChance>0</baseChance> <!-- given by Core40k.StorytellerComp_PersistentQuest -->
+    <baseChance>0</baseChance> <!-- given by BEWH_TheStandingOrder (Core40k.PersistentQuestDef) -->
   </IncidentDef>
 
   <QuestScriptDef>

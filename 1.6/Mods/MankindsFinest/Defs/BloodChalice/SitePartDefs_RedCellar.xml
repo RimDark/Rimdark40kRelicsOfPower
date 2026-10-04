@@ -78,7 +78,7 @@
         <landingPadSize>9</landingPadSize>
         <landingPadMinDistanceFromCrypt>35</landingPadMinDistanceFromCrypt>
         <landingPadMinDistanceFromEdge>25</landingPadMinDistanceFromEdge>
-        <!-- Set to a PrefabDef (e.g. BEWH_RedCellarCrypt) to use a hand-made crypt instead of the generated room. -->
+        <!-- Set roomPrefab to a PrefabDef to use a hand-made crypt instead of the generated room. -->
       </li>
     </modExtensions>
   </SitePartDef>

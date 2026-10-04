@@ -26,6 +26,11 @@ public class Comp_TempormortisRite : ThingComp
             return "Relics.Tempormortis.NotChaplaincy".Translate();
         }
 
+        if (!pawn.Spawned || pawn.Downed || !pawn.Awake())
+        {
+            return "Relics.Tempormortis.BrokeUnconscious".Translate();
+        }
+
         if (Props.riteHediff != null && pawn.health.hediffSet.HasHediff(Props.riteHediff))
         {
             return "Relics.Tempormortis.RiteUnderway".Translate();

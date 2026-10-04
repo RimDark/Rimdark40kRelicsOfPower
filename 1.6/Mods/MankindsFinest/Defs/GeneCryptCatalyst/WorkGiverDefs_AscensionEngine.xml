@@ -5,6 +5,7 @@
     <defName>BEWH_EnterAscensionEngine</defName>
     <label>enter ascension engine</label>
     <giverClass>Relics40k.WorkGiver_EnterAscensionEngine</giverClass>
+    <workType>BasicWorker</workType>
     <verb>enter</verb>
     <gerund>entering</gerund>
     <priorityInType>90</priorityInType>

@@ -55,6 +55,13 @@ public class PedestalAction_TempormortisTomb : PedestalAction
             return;
         }
 
+        var tag = Extension?.oncePerGameTag;
+
+        if (!tag.NullOrEmpty())
+        {
+            GameComponent_Relics40kQuests.MarkFired(tag);
+        }
+
         Find.LetterStack.ReceiveLetter(
             "Relics.Tempormortis.TakenLetterLabel".Translate(),
             "Relics.Tempormortis.TakenLetterText".Translate(taker.Named("PAWN")),

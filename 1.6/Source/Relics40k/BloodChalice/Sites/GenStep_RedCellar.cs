@@ -45,6 +45,7 @@ public class GenStep_RedCellar : GenStep
 
         var rect = GenAdj.OccupiedRect(center, Rot4.North, size).ClipInsideMap(map);
 
+        BuriedSiteUtility.SolidifyTerrain(map, rect.ExpandedBy(extension.cavityPadding));
         BuriedSiteUtility.BuryRect(map, rect, extension.cavityPadding, extension.minRockDepth);
         BuriedSiteUtility.CarveCavity(map, rect, extension.cavityPadding);
         ClearRect(map, rect);
@@ -112,6 +113,7 @@ public class GenStep_RedCellar : GenStep
         var rect = GenAdj.OccupiedRect(center, Rot4.North, size).ClipInsideMap(map);
         var limit = rect.ExpandedBy(reach).ClipInsideMap(map);
 
+        BuriedSiteUtility.SolidifyTerrain(map, limit);
         BuriedSiteUtility.BuryRect(map, limit, 0, extension.minRockDepth);
 
         var spawned = StructureLayoutUtility.Spawn(map, layout, rect, rotation, extension.wallStuff,

@@ -34,6 +34,9 @@ public class DefModExtension_TempormortisTomb : DefModExtension
 
     public PawnKindDef guardianKind = null;
 
+    // Once-per-game quest tag consumed when the relic is lifted from the plinth.
+    public string oncePerGameTag = null;
+
     public int guardianCount = 4;
 
     public float guardianMinPoints = 800f;

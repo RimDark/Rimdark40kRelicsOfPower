@@ -63,7 +63,7 @@ public class Building_AscensionEngine : Building_Enterable
 
     public override AcceptanceReport CanAcceptPawn(Pawn selPawn)
     {
-        if (!selPawn.IsColonist && !selPawn.IsSlaveOfColony && !selPawn.IsPrisonerOfColony)
+        if (!selPawn.IsColonist && !selPawn.IsSlaveOfColony)
         {
             return false;
         }
@@ -154,6 +154,18 @@ public class Building_AscensionEngine : Building_Enterable
     {
         base.Tick();
 
+        if (CandidateLost())
+        {
+            Find.LetterStack.ReceiveLetter(
+                "Relics.GeneCryptCatalyst.CandidateLostLetterLabel".Translate(),
+                "Relics.GeneCryptCatalyst.CandidateLostLetterText".Translate(selectedPawn.Named("PAWN")),
+                LetterDefOf.NegativeEvent,
+                new TargetInfo(Position, Map));
+
+            Destroy(DestroyMode.KillFinalize);
+            return;
+        }
+
         if (!Working || ascended || burnedOut)
         {
             return;
@@ -176,6 +188,17 @@ public class Building_AscensionEngine : Building_Enterable
         {
             Ascend(extension);
         }
+    }
+
+    /// <summary>True when the pawn the engine opened for can no longer reach it.</summary>
+    private bool CandidateLost()
+    {
+        if (selectedPawn == null || ascended || burnedOut || Occupant != null)
+        {
+            return false;
+        }
+
+        return selectedPawn.Dead || selectedPawn.Destroyed || selectedPawn.MapHeld != Map;
     }
 
     private void SendWave(DefModExtension_AscensionEngine extension)
@@ -213,6 +236,11 @@ public class Building_AscensionEngine : Building_Enterable
             points = points,
             raidArrivalMode = PawnsArrivalModeDefOf.EdgeWalkIn
         };
+
+        if (!parms.raidArrivalMode.Worker.TryResolveRaidSpawnCenter(parms))
+        {
+            return;
+        }
 
         var pawns = PawnGroupMakerUtility.GeneratePawns(new PawnGroupMakerParms
         {
@@ -280,6 +308,8 @@ public class Building_AscensionEngine : Building_Enterable
             "Relics.GeneCryptCatalyst.AscendedLetterText".Translate(occupant.Named("PAWN")),
             LetterDefOf.PositiveEvent,
             occupant);
+
+        ResolveQuestSignals();
 
         if (!completedSignal.NullOrEmpty())
         {
@@ -411,12 +441,32 @@ public class Building_AscensionEngine : Building_Enterable
         selectedPawn = null;
     }
 
+    /// <summary>Picks up the quest's signals when nothing handed them over at map generation.</summary>
+    private void ResolveQuestSignals()
+    {
+        if (!completedSignal.NullOrEmpty() && !destroyedSignal.NullOrEmpty())
+        {
+            return;
+        }
+
+        var part = QuestPart_AscensionEngine.FindFor(Map);
+
+        if (part == null)
+        {
+            return;
+        }
+
+        completedSignal = part.inSignalEngineCompleted;
+        destroyedSignal = part.inSignalEngineDestroyed;
+    }
+
     public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
     {
         var failed = mode == DestroyMode.KillFinalize && !ascended;
 
         if (failed)
         {
+            ResolveQuestSignals();
             EjectContents();
             startTick = -1;
 

@@ -83,6 +83,12 @@ public class QuestNode_MountainousSite : QuestNode
 
     private static bool TryFindTileWith(int min, int max, Hilliness minHilliness, out PlanetTile tile)
     {
+        return TryFindTileWith(min, max, minHilliness, true, out tile)
+            || TryFindTileWith(min, max, minHilliness, false, out tile);
+    }
+
+    private static bool TryFindTileWith(int min, int max, Hilliness minHilliness, bool avoidRivers, out PlanetTile tile)
+    {
         return TileFinder.TryFindNewSiteTile(
             out tile,
             min,
@@ -99,9 +105,15 @@ public class QuestNode_MountainousSite : QuestNode
 
         bool IsHillyEnough(PlanetTile candidate)
         {
-            var hilliness = Find.WorldGrid[candidate].hilliness;
+            var worldTile = Find.WorldGrid[candidate];
+            var hilliness = worldTile.hilliness;
 
-            return hilliness >= minHilliness && hilliness != Hilliness.Impassable;
+            if (hilliness < minHilliness || hilliness == Hilliness.Impassable)
+            {
+                return false;
+            }
+
+            return !avoidRivers || worldTile is not SurfaceTile surface || surface.Rivers.NullOrEmpty();
         }
     }
 }

@@ -102,6 +102,39 @@ public class QuestPart_AscensionEngine : QuestPart
         engine.destroyedSignal = inSignalEngineDestroyed;
     }
 
+    /// <summary>The part of the ongoing quest whose site holds this map, if there is one.</summary>
+    public static QuestPart_AscensionEngine FindFor(Map map)
+    {
+        var parent = map?.Parent;
+
+        if (parent == null)
+        {
+            return null;
+        }
+
+        var quests = Find.QuestManager.QuestsListForReading;
+
+        for (var i = 0; i < quests.Count; i++)
+        {
+            if (quests[i].State != QuestState.Ongoing)
+            {
+                continue;
+            }
+
+            var parts = quests[i].PartsListForReading;
+
+            for (var j = 0; j < parts.Count; j++)
+            {
+                if (parts[j] is QuestPart_AscensionEngine part && part.site == parent)
+                {
+                    return part;
+                }
+            }
+        }
+
+        return null;
+    }
+
     private Building_AscensionEngine FindEngine()
     {
         var map = site?.Map;

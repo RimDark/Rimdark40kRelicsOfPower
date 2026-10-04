@@ -30,6 +30,8 @@
   <Relics.GeneCryptCatalyst.EngineNotThunderWarrior>the intake will not open for this blood</Relics.GeneCryptCatalyst.EngineNotThunderWarrior>
   <Relics.GeneCryptCatalyst.Busy>already running</Relics.GeneCryptCatalyst.Busy>
   <Relics.GeneCryptCatalyst.Spent>burned out</Relics.GeneCryptCatalyst.Spent>
+  <Relics.GeneCryptCatalyst.CandidateLostLetterLabel>The forge goes dark</Relics.GeneCryptCatalyst.CandidateLostLetterLabel>
+  <Relics.GeneCryptCatalyst.CandidateLostLetterText>{PAWN_nameDef} was the blood the ascension engine had opened for, and {PAWN_pronoun} will not be reaching it. The intake closes and the forge burns itself out.</Relics.GeneCryptCatalyst.CandidateLostLetterText>
   <Relics.GeneCryptCatalyst.InspectIdle>Charged. Awaiting a thunder warrior.</Relics.GeneCryptCatalyst.InspectIdle>
   <Relics.GeneCryptCatalyst.InspectRunning>Working: {0} remaining</Relics.GeneCryptCatalyst.InspectRunning>
   <Relics.GeneCryptCatalyst.InspectSpent>Burned out. The reservoirs are dry.</Relics.GeneCryptCatalyst.InspectSpent>

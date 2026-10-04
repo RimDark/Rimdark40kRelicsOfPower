@@ -57,6 +57,7 @@ public class GenStep_TempormortisTomb : GenStep
 
         var rect = GenAdj.OccupiedRect(center, Rot4.North, size).ClipInsideMap(map);
 
+        BuriedSiteUtility.SolidifyTerrain(map, rect.ExpandedBy(extension.cavityPadding));
         BuriedSiteUtility.BuryRect(map, rect, extension.cavityPadding, extension.minRockDepth);
         BuriedSiteUtility.CarveCavity(map, rect, extension.cavityPadding);
 
