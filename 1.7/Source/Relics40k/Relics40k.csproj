@@ -34,7 +34,7 @@
           <Private>False</Private>
         </Reference>
         <Reference Include="KCSG">
-          <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2023507013\1.6\Assemblies\KCSG.dll</HintPath>
+          <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2023507013\1.7\Assemblies\KCSG.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Core40k">
