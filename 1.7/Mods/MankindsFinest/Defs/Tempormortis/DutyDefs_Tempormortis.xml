@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Held by the tomb guardians while the field has them: no jobs, no socialising, weapon still up. -->
+  <DutyDef>
+    <defName>BEWH_FrozenInTime</defName>
+    <threatDisabled>true</threatDisabled>
+    <socialModeMax>Off</socialModeMax>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_Idle" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+</Defs>

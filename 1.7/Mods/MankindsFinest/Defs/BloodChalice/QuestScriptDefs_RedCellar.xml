@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>BEWH_RedCellar</defName>
+    <rootSelectionWeight>0.6</rootSelectionWeight>
+    <rootMinPoints>300</rootMinPoints>
+    <rootEarliestDay>20</rootEarliestDay>
+    <expireDaysRange>3~6</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->The Red Cellar</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A factor hailed us on an unregistered channel. He speaks for a rogue trader whose lighter is burning fuel in high orbit, and he is selling a tile reference.\n\nThere is a crypt cut deep into a mountain not far from [map_definite]. His master's auspex found it, and will not go near it. The walls sweat. The air tastes of iron. Anyone who breathes it for an hour bleeds and does not stop.\n\nWhat is down there is the Blood Chalice. It does not give life; it gives back what was taken - wounds, scars, sickness, thirst, all of it - to anyone whose blood already runs on the red thirst. And [drinker_nameDef] is exactly that.\n\nThe price is [passageFee] silver. For that the lighter sets down here, carries [requiredPawnCount] of ours to the mountain, waits, and brings back whoever walks out.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+
+        <li Class="Relics40k.QuestNode_OncePerGame">
+          <tag>BEWH_RedCellar</tag>
+        </li>
+
+        <li Class="Relics40k.QuestNode_RequireHemogenicColonist">
+          <storeAs>drinker</storeAs>
+        </li>
+
+        <li Class="QuestNode_QuestUnique">
+          <tag>BEWH_RedCellar</tag>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="Relics40k.QuestNode_MountainousSite">
+          <sitePartDef>BEWH_RedCellar</sitePartDef>
+          <factionDef>AncientsHostile</factionDef>
+          <distanceFromColonyRange>4~12</distanceFromColonyRange>
+          <storeAs>site</storeAs>
+        </li>
+
+        <li Class="Relics40k.QuestNode_RelicShuttleMission">
+          <site>$site</site>
+          <shipDef>BEWH_Ship_RogueTraderShuttle</shipDef>
+          <requiredPawnCount>3</requiredPawnCount>
+          <passageFee>2000</passageFee>
+          <colonyBoardingDelayTicks>60000</colonyBoardingDelayTicks>
+          <sitePatienceTicks>120000</sitePatienceTicks>
+          <storeShuttleAs>shuttle</storeShuttleAs>
+        </li>
+
+        <li Class="Relics40k.QuestNode_RedCellar">
+          <site>$site</site>
+          <guardianKind>BEWH_LostBrother</guardianKind>
+          <chaliceDef>BEWH_BloodChalice</chaliceDef>
+          <cooldownReductionPerKill>0.25</cooldownReductionPerKill>
+          <inSignalMapGenerated>site.MapGenerated</inSignalMapGenerated>
+          <inSignalMapRemoved>site.MapRemoved</inSignalMapRemoved>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(25,40)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label>Quest expired: [resolvedQuestName]</label>
+                <text>The rogue trader has moved on, and his tile reference with him. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End" />
+        </li>
+
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

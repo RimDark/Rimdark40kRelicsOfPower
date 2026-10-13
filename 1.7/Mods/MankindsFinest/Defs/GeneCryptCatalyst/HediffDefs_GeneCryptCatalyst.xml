@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Recovery coma: five days, modelled on XenogerminationComa -->
+  <HediffDef>
+    <defName>BEWH_GeneCryptComa</defName>
+    <label>ascension coma</label>
+    <description>The ascension engine rewrote this person's proto-organs into their perfected Astartes forms in a single working. Every organ was remade at once, and the body is now spending everything it has left on finishing the job. It cannot afford consciousness while it does.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+    <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>300000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+        <canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+      </li>
+    </comps>
+  </HediffDef>
+
+</Defs>

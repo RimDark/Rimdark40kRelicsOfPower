@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnKindDef ParentName="BEWH_ImperiumSuperSoldierPawnBase">
+    <defName>BEWH_LostBrother</defName>
+    <label>lost brother</label>
+    <combatPower>200</combatPower>
+    <apparelRequired>
+      <li>BEWH_MkVIIPowerArmor</li>
+      <li>BEWH_MkVIIPowerArmorHelmet</li>
+    </apparelRequired>
+    <weaponTags Inherit="False">
+      <li>BEWH_AstartesMelee</li>
+    </weaponTags>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>14~18</range>
+      </li>
+      <li>
+        <skill>Shooting</skill>
+        <range>6~10</range>
+      </li>
+    </skills>
+    <xenotypeSet>
+      <xenotypeChances>
+        <BEWH_SpaceMarine>1</BEWH_SpaceMarine>
+      </xenotypeChances>
+    </xenotypeSet>
+    <modExtensions>
+      <li Class="Genes40k.DefModExtension_SpawnAsChapter">
+        <specificChapters>
+          <li>BEWH_ChapterColourIX</li>
+        </specificChapters>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+</Defs>

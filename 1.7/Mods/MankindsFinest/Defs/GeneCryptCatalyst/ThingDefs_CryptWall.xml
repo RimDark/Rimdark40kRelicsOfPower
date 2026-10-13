@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- The vault shell. No hit points, not deconstructible, not targetable and not mineable, so the
+       gene-lock cannot be walked around. Only the shell and the entry throat use this; interior
+       dividers stay ordinary walls. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_CryptWall</defName>
+    <label>crypt wall</label>
+    <description>Adamantium-laced ferrocrete poured in one unbroken form and cured under pressure. The Unification-era vaults were built to outlast the men who sealed them, and this one has. There is no seam to cut, no mortar to work at and nothing inside it that yields - the crypt opens at the gene-lock or it does not open.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Things/Building/Linked/Wall</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <blockLight>true</blockLight>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <holdsRoof>true</holdsRoof>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <canOverlapZones>false</canOverlapZones>
+    <mineable>false</mineable>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <stuffCategories>
+      <li>Stony</li>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>5</costStuffCount>
+    <building>
+      <isEdifice>true</isEdifice>
+      <isInert>true</isInert>
+      <repairable>false</repairable>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <isTargetable>false</isTargetable>
+      <canBuildNonEdificesUnder>false</canBuildNonEdificesUnder>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <isAirtight>true</isAirtight>
+    </building>
+  </ThingDef>
+
+</Defs>

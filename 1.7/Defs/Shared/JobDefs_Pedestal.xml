@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>BEWH_TakeFromPedestal</defName>
+    <driverClass>Relics40k.JobDriver_TakeFromPedestal</driverClass>
+    <reportString>lifting TargetB from TargetA.</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>

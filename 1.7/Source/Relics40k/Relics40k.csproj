@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <OutputType>Library</OutputType>
+        <RootNamespace>Relics40k</RootNamespace>
+        <AssemblyName>Relics40k</AssemblyName>
+        <LangVersion>latest</LangVersion>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <OutputPath>../../Assemblies/</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+        <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+        <GenerateDependencyFile>false</GenerateDependencyFile>
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Assembly-CSharp">
+          <HintPath>..\..\..\..\..\Assembly-CSharp.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityStubs">
+          <HintPath>..\..\..\..\..\UnityStubs.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Waylith">
+          <HintPath>..\..\..\..\..\Waylith.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="0Harmony">
+          <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2009463077\1.7\Assemblies\0Harmony.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="KCSG">
+          <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2023507013\1.6\Assemblies\KCSG.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Core40k">
+          <HintPath>..\..\..\..\Rimdark40kFramework\1.7\Assemblies\Core40k.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <AbilityDef>
+    <defName>BEWH_TempormortisTurnTheSands</defName>
+    <label>turn the sands</label>
+    <description>Invert the Tempormortis. While the sands run, time thickens around the bearer: hostile creatures inside the field move, aim and strike at a fraction of their normal speed, cannot dodge, and take heavier blows from melee. The bearer is unaffected.\n\nOnly a Judiciar, Chaplain or Master of Sanctity may turn the sands.</description>
+    <iconPath>UI/Abilities/BEWH_AbilityLibrarianWaveOfLethargy</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <targetRequired>false</targetRequired>
+    <aiCanUse>false</aiCanUse>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <canUseAoeToGetTargets>false</canUseAoeToGetTargets>
+    <statBases>
+      <Ability_EffectRadius>5.9</Ability_EffectRadius>
+      <Ability_Duration>15</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0.5</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Core40k.CompProperties_AbilityRequireRank">
+        <requiredRanksOneAmong>
+          <li>BEWH_AstartesRankJudiciar</li>
+          <li>BEWH_AstartesRankChaplain</li>
+          <li>BEWH_AstartesRankMasterOfSanctity</li>
+        </requiredRanksOneAmong>
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>BEWH_TempormortisActive</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

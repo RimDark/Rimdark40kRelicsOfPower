@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>BEWH_TempormortisTomb</defName>
+    <rootSelectionWeight>0.6</rootSelectionWeight>
+    <rootMinPoints>400</rootMinPoints>
+    <rootEarliestDay>25</rootEarliestDay>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->The Last Hour</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A surveyor crew working [map_definite] gave up a set of coordinates rather than go back to them. They had driven a bore into the side of a mountain, broken through into a chamber nobody cut, and dropped a lamp into it. It fell for four minutes.\n\nWe know what that is, and so does [judiciar_nameDef].\n\nWhen a Chapter loses a world it does not always lose the relics with it. A Judiciar who cannot carry his tempormortis out turns it on himself and on whatever is coming through the door, and the two of them stop together. He does not survive it. The device does, and so does everything he stopped.\n\nInside, everything will be slowed to a crawl - our people included. Nothing in there can hurry, which is the only reason anyone has ever walked out of one of these.\n\nThe hourglass will be on a plinth in the middle. Only the Chaplaincy may lift it, and lifting it lets time back in for both sides at once. Whatever he stopped is still mid-stride and has been waiting a very long time to finish the step.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+
+        <li Class="Relics40k.QuestNode_OncePerGame">
+          <tag>BEWH_TempormortisTomb</tag>
+        </li>
+
+        <li Class="Relics40k.QuestNode_RequireRankedColonist">
+          <storeAs>judiciar</storeAs>
+          <requiredRanksOneAmong>
+            <li>BEWH_AstartesRankJudiciar</li>
+            <li>BEWH_AstartesRankChaplain</li>
+            <li>BEWH_AstartesRankMasterOfSanctity</li>
+          </requiredRanksOneAmong>
+        </li>
+
+        <li Class="QuestNode_QuestUnique">
+          <tag>BEWH_TempormortisTomb</tag>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="Relics40k.QuestNode_MountainousSite">
+          <sitePartDef>BEWH_TempormortisTomb</sitePartDef>
+          <factionDef>AncientsHostile</factionDef>
+          <distanceFromColonyRange>4~12</distanceFromColonyRange>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End" />
+        </li>
+
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

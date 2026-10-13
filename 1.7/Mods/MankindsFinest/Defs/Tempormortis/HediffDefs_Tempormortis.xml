@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- On the bearer while the sands run. -->
+  <HediffDef>
+    <defName>BEWH_TempormortisActive</defName>
+    <label>sands turned</label>
+    <description>The Tempormortis is inverted. Time thickens around this warrior; everything hostile within reach is slowed while it runs.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <initialSeverity>1</initialSeverity>
+    <defaultLabelColor>(0.75, 0.85, 1.0)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <stages>
+      <li>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="Relics40k.HediffCompProperties_TemporalAura">
+        <radius>5.9</radius>
+        <pulseIntervalTicks>30</pulseIntervalTicks>
+        <slowHediff>BEWH_TemporalDilation</slowHediff>
+        <slowLingerTicks>90</slowLingerTicks>
+        <affectHostileOnly>true</affectHostileOnly>
+        <affectDowned>false</affectDowned>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- On foes inside the field. Refreshed every pulse; fades 1.5s after leaving. -->
+  <HediffDef>
+    <defName>BEWH_TemporalDilation</defName>
+    <label>temporal dilation</label>
+    <description>Caught in the field of a Tempormortis. Every movement is dragged out and every blow lands a heartbeat late - and there is no slipping a strike that has already fallen.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <initialSeverity>1</initialSeverity>
+    <defaultLabelColor>(0.55, 0.7, 1.0)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.35</MoveSpeed>
+          <MeleeCooldownFactor>2.0</MeleeCooldownFactor>
+          <RangedCooldownFactor>2.0</RangedCooldownFactor>
+          <AimingDelayFactor>2.0</AimingDelayFactor>
+          <MeleeDodgeChance>0</MeleeDodgeChance>
+          <IncomingDamageFactor>1.25</IncomingDamageFactor>
+        </statFactors>
+        <statOffsets>
+          <MeleeHitChance>-6</MeleeHitChance>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>90</disappearsAfterTicks>
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BEWH_KeepingTheVigil</defName>
+    <label>keeping the vigil</label>
+    <description>This warrior is standing the rite of the tempormortis. He may not sleep, may not be drafted, may not take up a weapon and may not put the hourglass down until the sands have run. The Chaplaincy is watching, and so is everything else that noticed the device wake.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <initialSeverity>1</initialSeverity>
+    <defaultLabelColor>(0.75, 0.85, 1.0)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <stages>
+      <li>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="Relics40k.HediffCompProperties_TempormortisRite">
+        <dormantDef>BEWH_TempormortisDormant</dormantDef>
+        <awakenedDef>BEWH_Tempormortis</awakenedDef>
+        <!-- 60000 ticks = 1 in-game day. A raid every 15000 ticks (6 hours). -->
+        <durationTicks>60000</durationTicks>
+        <raidIntervalTicks>15000</raidIntervalTicks>
+        <raidPointsFactor>1</raidPointsFactor>
+        <!-- At least this many years total, split among everyone present who still ages. -->
+        <totalYears>10</totalYears>
+        <minYearsEach>1</minYearsEach>
+        <keptThought>BEWH_VigilKept</keptThought>
+        <brokenThought>BEWH_VigilBroken</brokenThought>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+</Defs>

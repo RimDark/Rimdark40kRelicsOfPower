@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <MaterialDef>
+    <defName>BEWH_TintedMistOverlayWorld</defName>
+    <resourcePath>Relics40k/Weather/TintedMistOverlayWorld</resourcePath>
+    <shader>FogOverlay</shader>
+    <textures>
+      <li>
+        <name>_MainTex</name>
+        <path>Weather/Overlays/FogWorld</path>
+        <scale>(0.35, 0.35)</scale>
+        <offset>(-267.83926, -267.83926)</offset>
+      </li>
+      <li>
+        <name>_MainTex2</name>
+        <path>Weather/Overlays/FogWorld</path>
+        <scale>(0.25, 0.25)</scale>
+        <offset>(-153.051, 153.051)</offset>
+      </li>
+    </textures>
+    <colors>
+      <li>
+        <name>_Color</name>
+        <value>(1, 1, 1, 0)</value>
+      </li>
+      <li>
+        <name>_TuningColor</name>
+        <value>(0.3882353, 0.3882353, 0.3882353, 0.19215687)</value>
+      </li>
+    </colors>
+  </MaterialDef>
+
+</Defs>

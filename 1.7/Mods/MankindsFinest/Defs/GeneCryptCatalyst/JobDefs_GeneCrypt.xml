@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>BEWH_BreakGeneSeal</defName>
+    <driverClass>Relics40k.JobDriver_BreakGeneSeal</driverClass>
+    <reportString>breaking the gene-seal of TargetA.</reportString>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>
